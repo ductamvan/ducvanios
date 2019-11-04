@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>705442433194-ukmgipfjvmnjd7mhfu69t8a6g4l6cfau.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.705442433194-ukmgipfjvmnjd7mhfu69t8a6g4l6cfau</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCe0UT2pV6f_qYMJ7RoCZ2sR9zDTrthH5A</string>
+	<key>GCM_SENDER_ID</key>
+	<string>705442433194</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>School.NativeAppsFinalProject</string>
+	<key>PROJECT_ID</key>
+	<string>nativeappsiiproject</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nativeappsiiproject.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:705442433194:ios:6aaf40d29612b11110e8d3</string>
+	<key>DATABASE_URL</key>
+	<string>https://nativeappsiiproject.firebaseio.com</string>
+</dict>
+</plist>

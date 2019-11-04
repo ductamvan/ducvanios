@@ -1,0 +1,6 @@
+framework module Pods_NativeAppsFinalProject {
+  umbrella header "Pods-NativeAppsFinalProject-umbrella.h"
+
+  export *
+  module * { export * }
+}
