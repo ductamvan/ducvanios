@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("github connect");
-        print("github connect nr2");
+        print("github connect success");
+     
     }
     
     
