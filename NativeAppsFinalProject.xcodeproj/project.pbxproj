@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -100,7 +100,6 @@
 				EAB883B312D33ED69829A61D /* Pods-NativeAppsFinalProject.debug.xcconfig */,
 				1825B4541D9EE327FEEDAFF0 /* Pods-NativeAppsFinalProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

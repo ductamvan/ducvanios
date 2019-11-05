@@ -9,6 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    //outlets
 
    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -20,14 +21,19 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //error messages invisible maken
         setUpElements();
+        
      
     }
     
+     //error messages invisible maken
     func setUpElements() {
         ErrorDetectionLabel.alpha = 0;
         
     }
+    
+   
     
     
     @IBAction func signInButtonPressed(_ sender: Any) {

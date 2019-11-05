@@ -10,11 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var singUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //github connection test.
         print("github connect success");
+        setUpElements();
+      
      
+    }
+    
+    //elements plaatsen en bewereken
+    func setUpElements(){
+        loginButton.layer.cornerRadius = 50;
+        singUpButton.layer.cornerRadius = 50;
+        
     }
     
     
