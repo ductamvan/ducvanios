@@ -10,13 +10,19 @@
 		191CC40B23705BF4003AA481 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC40A23705BF4003AA481 /* AppDelegate.swift */; };
 		191CC40D23705BF4003AA481 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC40C23705BF4003AA481 /* SceneDelegate.swift */; };
 		191CC40F23705BF4003AA481 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC40E23705BF4003AA481 /* ViewController.swift */; };
-		191CC41223705BF4003AA481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191CC41023705BF4003AA481 /* Main.storyboard */; };
 		191CC41423705BFA003AA481 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 191CC41323705BFA003AA481 /* Assets.xcassets */; };
 		191CC41723705BFA003AA481 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191CC41523705BFA003AA481 /* LaunchScreen.storyboard */; };
 		191CC42423706666003AA481 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC42323706666003AA481 /* LoginViewController.swift */; };
 		191CC42623706673003AA481 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC42523706673003AA481 /* SignUpViewController.swift */; };
 		191CC42823706680003AA481 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC42723706680003AA481 /* WelcomViewController.swift */; };
 		191CC42B23708550003AA481 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 191CC42A23708550003AA481 /* GoogleService-Info.plist */; };
+		191CC43123731C41003AA481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191CC43023731C41003AA481 /* Main.storyboard */; };
+		191CC43523759F70003AA481 /* DiscoveryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43423759F70003AA481 /* DiscoveryItemViewController.swift */; };
+		191CC43723759F81003AA481 /* MyProfileItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43623759F81003AA481 /* MyProfileItemViewController.swift */; };
+		191CC43923759F92003AA481 /* ReservationsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43823759F92003AA481 /* ReservationsItemViewController.swift */; };
+		191CC43B2375AD34003AA481 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43A2375AD34003AA481 /* PostViewCell.swift */; };
+		191CC43E2375AFDE003AA481 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43D2375AFDE003AA481 /* Post.swift */; };
+		191CC4402375B0EA003AA481 /* PostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43F2375B0EA003AA481 /* PostListTableViewController.swift */; };
 		C2A7F63A5A55E9BD00F69784 /* Pods_NativeAppsFinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2574E343CE0E66DAF57CCEC7 /* Pods_NativeAppsFinalProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +32,6 @@
 		191CC40A23705BF4003AA481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		191CC40C23705BF4003AA481 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		191CC40E23705BF4003AA481 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		191CC41123705BF4003AA481 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		191CC41323705BFA003AA481 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		191CC41623705BFA003AA481 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		191CC41823705BFA003AA481 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +39,13 @@
 		191CC42523706673003AA481 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		191CC42723706680003AA481 /* WelcomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		191CC42A23708550003AA481 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		191CC43023731C41003AA481 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		191CC43423759F70003AA481 /* DiscoveryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryItemViewController.swift; sourceTree = "<group>"; };
+		191CC43623759F81003AA481 /* MyProfileItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileItemViewController.swift; sourceTree = "<group>"; };
+		191CC43823759F92003AA481 /* ReservationsItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsItemViewController.swift; sourceTree = "<group>"; };
+		191CC43A2375AD34003AA481 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
+		191CC43D2375AFDE003AA481 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		191CC43F2375B0EA003AA481 /* PostListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListTableViewController.swift; sourceTree = "<group>"; };
 		2574E343CE0E66DAF57CCEC7 /* Pods_NativeAppsFinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NativeAppsFinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB883B312D33ED69829A61D /* Pods-NativeAppsFinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeAppsFinalProject.debug.xcconfig"; path = "Target Support Files/Pods-NativeAppsFinalProject/Pods-NativeAppsFinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,8 +85,9 @@
 			children = (
 				191CC40A23705BF4003AA481 /* AppDelegate.swift */,
 				191CC40C23705BF4003AA481 /* SceneDelegate.swift */,
+				191CC43023731C41003AA481 /* Main.storyboard */,
+				191CC43C2375AFB4003AA481 /* Model */,
 				191CC42923706712003AA481 /* ViewControllers */,
-				191CC41023705BF4003AA481 /* Main.storyboard */,
 				191CC41323705BFA003AA481 /* Assets.xcassets */,
 				191CC42A23708550003AA481 /* GoogleService-Info.plist */,
 				191CC41523705BFA003AA481 /* LaunchScreen.storyboard */,
@@ -90,8 +103,21 @@
 				191CC42323706666003AA481 /* LoginViewController.swift */,
 				191CC42523706673003AA481 /* SignUpViewController.swift */,
 				191CC42723706680003AA481 /* WelcomViewController.swift */,
+				191CC43423759F70003AA481 /* DiscoveryItemViewController.swift */,
+				191CC43623759F81003AA481 /* MyProfileItemViewController.swift */,
+				191CC43823759F92003AA481 /* ReservationsItemViewController.swift */,
+				191CC43A2375AD34003AA481 /* PostViewCell.swift */,
+				191CC43F2375B0EA003AA481 /* PostListTableViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		191CC43C2375AFB4003AA481 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				191CC43D2375AFDE003AA481 /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9C106A71DD3EF9FBF8BB528C /* Pods */ = {
@@ -174,7 +200,7 @@
 				191CC41723705BFA003AA481 /* LaunchScreen.storyboard in Resources */,
 				191CC42B23708550003AA481 /* GoogleService-Info.plist in Resources */,
 				191CC41423705BFA003AA481 /* Assets.xcassets in Resources */,
-				191CC41223705BF4003AA481 /* Main.storyboard in Resources */,
+				191CC43123731C41003AA481 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,11 +253,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				191CC4402375B0EA003AA481 /* PostListTableViewController.swift in Sources */,
+				191CC43723759F81003AA481 /* MyProfileItemViewController.swift in Sources */,
 				191CC42423706666003AA481 /* LoginViewController.swift in Sources */,
+				191CC43E2375AFDE003AA481 /* Post.swift in Sources */,
+				191CC43B2375AD34003AA481 /* PostViewCell.swift in Sources */,
 				191CC40F23705BF4003AA481 /* ViewController.swift in Sources */,
+				191CC43923759F92003AA481 /* ReservationsItemViewController.swift in Sources */,
 				191CC40B23705BF4003AA481 /* AppDelegate.swift in Sources */,
 				191CC40D23705BF4003AA481 /* SceneDelegate.swift in Sources */,
 				191CC42623706673003AA481 /* SignUpViewController.swift in Sources */,
+				191CC43523759F70003AA481 /* DiscoveryItemViewController.swift in Sources */,
 				191CC42823706680003AA481 /* WelcomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,14 +271,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		191CC41023705BF4003AA481 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				191CC41123705BF4003AA481 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		191CC41523705BFA003AA481 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
