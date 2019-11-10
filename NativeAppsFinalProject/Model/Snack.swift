@@ -14,11 +14,13 @@ struct Snack {
     var Naam : String;
     var Prijs : Double;
     var Beschrijving : String;
+    var Categorie : String
     
-    init(image : UIImage, naam : String, prijs : Double, beschrijving : String) {
+    init(image : UIImage, naam : String, prijs : Double, beschrijving : String, categorie : String) {
         self.Image = image;
         self.Naam = naam;
         self.Prijs = prijs;
         self.Beschrijving = beschrijving;
+        self.Categorie = categorie;
     }
 }

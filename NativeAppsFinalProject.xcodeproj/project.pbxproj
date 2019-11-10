@@ -18,7 +18,6 @@
 		191CC42B23708550003AA481 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 191CC42A23708550003AA481 /* GoogleService-Info.plist */; };
 		191CC43123731C41003AA481 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191CC43023731C41003AA481 /* Main.storyboard */; };
 		191CC43523759F70003AA481 /* DiscoveryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43423759F70003AA481 /* DiscoveryItemViewController.swift */; };
-		191CC43723759F81003AA481 /* MyProfileItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43623759F81003AA481 /* MyProfileItemViewController.swift */; };
 		191CC43923759F92003AA481 /* ReservationsItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43823759F92003AA481 /* ReservationsItemViewController.swift */; };
 		191CC43B2375AD34003AA481 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43A2375AD34003AA481 /* PostViewCell.swift */; };
 		191CC43E2375AFDE003AA481 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43D2375AFDE003AA481 /* Post.swift */; };
@@ -44,7 +43,6 @@
 		191CC42A23708550003AA481 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		191CC43023731C41003AA481 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		191CC43423759F70003AA481 /* DiscoveryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryItemViewController.swift; sourceTree = "<group>"; };
-		191CC43623759F81003AA481 /* MyProfileItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileItemViewController.swift; sourceTree = "<group>"; };
 		191CC43823759F92003AA481 /* ReservationsItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsItemViewController.swift; sourceTree = "<group>"; };
 		191CC43A2375AD34003AA481 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
 		191CC43D2375AFDE003AA481 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				191CC42523706673003AA481 /* SignUpViewController.swift */,
 				191CC42723706680003AA481 /* WelcomViewController.swift */,
 				191CC43423759F70003AA481 /* DiscoveryItemViewController.swift */,
-				191CC43623759F81003AA481 /* MyProfileItemViewController.swift */,
 				191CC43823759F92003AA481 /* ReservationsItemViewController.swift */,
 				191CC43A2375AD34003AA481 /* PostViewCell.swift */,
 				191CC43F2375B0EA003AA481 /* PostListTableViewController.swift */,
@@ -263,7 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				191CC4402375B0EA003AA481 /* PostListTableViewController.swift in Sources */,
-				191CC43723759F81003AA481 /* MyProfileItemViewController.swift in Sources */,
 				19DAA9C3237751E000E4B314 /* SnackListTableViewController.swift in Sources */,
 				191CC42423706666003AA481 /* LoginViewController.swift in Sources */,
 				19DAA9C12377507C00E4B314 /* Snack.swift in Sources */,
