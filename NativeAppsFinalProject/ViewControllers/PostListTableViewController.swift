@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+
+
 
 
 class PostListTableViewController: UITableViewController{
@@ -14,35 +17,43 @@ class PostListTableViewController: UITableViewController{
     var posts : [Post] = [];
 
     @IBOutlet var PostTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        posts = createPosts();
         self.PostTableView.delegate = self;
         self.PostTableView.dataSource = self;
-        
-      
-       
-        
-        
+        posts = createPosts();
+    
 
     }
     
+    
+    
+    //posts creatie
     func createPosts() -> [Post]{
-        let post1 = Post(name: "News Distributor", text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h.");
-        let post2 = Post(name: "News Distributor", text: "Fifa Tournament coming soon... Stay tuned.");
-        let post3 = Post(name: "News Distributor", text: "Techo party. Doors 20h!");
-        let post4 = Post(name: "News Distributor", text: "Found car keys, the owner may come and get it.");
-        let post5 = Post(name: "New Distributor", text: "There is a new drink, in our Collection. Go check it out in the Discovery tab!");
-        let post6 = Post(name: "News Distributor", text: "Don't forget to close your bikes! Thieves are around!");
-        
+        let post1 = Post(name: "News Distributor"
+            ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
+            ,image: UIImage(named: "unlock dialogue")! );
+        let post2 = Post(name: "News Distributor"
+        ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
+        ,image: UIImage(named: "unlock dialogue")! );
+        let post3 = Post(name: "News Distributor"
+        ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
+        ,image: UIImage(named: "unlock dialogue")! );
+        let post4 = Post(name: "News Distributor"
+        ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
+        ,image: UIImage(named: "unlock dialogue")! );
+        let post5 = Post(name: "News Distributor"
+        ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
+        ,image: UIImage(named: "unlock dialogue")! );
         var posten : [Post] = [];
-        
         posten.append(post1);
         posten.append(post2);
         posten.append(post3);
         posten.append(post4);
         posten.append(post5);
-        posten.append(post6);
+        
         return posten;
     }
     
@@ -51,6 +62,7 @@ class PostListTableViewController: UITableViewController{
     // MARK: - Table view data source
     
 
+    //in table view steken
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count;
@@ -63,6 +75,8 @@ class PostListTableViewController: UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "postcell", for : indexPath) as! PostViewCell;
         cell.PersonNameImage.text = postie.Name;
         cell.PostContext.text = postie.Text;
+        cell.PostImage.image = postie.Image;
+        
         return cell;
         
         

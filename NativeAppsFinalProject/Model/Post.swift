@@ -14,10 +14,11 @@ public struct Post {
    
     var Name : String;
     var Text : String;
-    init(name : String , text : String) {
+    var Image : UIImage;
+    init(name : String , text : String , image : UIImage) {
         self.Name = name;
         self.Text = text;
-        
+        self.Image = image;
     
     }
     

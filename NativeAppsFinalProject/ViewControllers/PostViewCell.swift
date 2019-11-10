@@ -12,5 +12,5 @@ class PostViewCell: UITableViewCell {
 
     @IBOutlet weak var PersonNameImage: UILabel!
     @IBOutlet weak var PostContext: UILabel!
-    
+    @IBOutlet weak var PostImage: UIImageView!
 }

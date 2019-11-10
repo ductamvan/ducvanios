@@ -10,13 +10,23 @@ import UIKit
 
 class DiscoveryItemViewController: UIViewController {
 
+    @IBOutlet weak var SnackButton: UIButton!
+    @IBOutlet weak var DrinksButton: UIButton!
+    @IBOutlet weak var GamesButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+     
 
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func snacksButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "snackstable", sender: self);
+    }
+   
  
+    
 
 }
