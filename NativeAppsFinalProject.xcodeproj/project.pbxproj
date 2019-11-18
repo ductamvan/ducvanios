@@ -22,6 +22,12 @@
 		191CC43B2375AD34003AA481 /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43A2375AD34003AA481 /* PostViewCell.swift */; };
 		191CC43E2375AFDE003AA481 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43D2375AFDE003AA481 /* Post.swift */; };
 		191CC4402375B0EA003AA481 /* PostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC43F2375B0EA003AA481 /* PostListTableViewController.swift */; };
+		1945D53A237C5C54005CF923 /* GamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945D539237C5C54005CF923 /* GamesTableViewController.swift */; };
+		1945D53C237C5C67005CF923 /* GameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945D53B237C5C67005CF923 /* GameViewCell.swift */; };
+		1945D53E237C5F32005CF923 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945D53D237C5F32005CF923 /* Game.swift */; };
+		1946A3AB237A981A001D5046 /* DrinkViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1946A3AA237A981A001D5046 /* DrinkViewCell.swift */; };
+		1946A3AD237A9832001D5046 /* DrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1946A3AC237A9832001D5046 /* DrinksTableViewController.swift */; };
+		1946A3AF237A984B001D5046 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1946A3AE237A984B001D5046 /* Drink.swift */; };
 		19DAA9C12377507C00E4B314 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAA9C02377507C00E4B314 /* Snack.swift */; };
 		19DAA9C3237751E000E4B314 /* SnackListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAA9C2237751E000E4B314 /* SnackListTableViewController.swift */; };
 		19DAA9C52377523700E4B314 /* SnackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAA9C42377523700E4B314 /* SnackViewCell.swift */; };
@@ -47,6 +53,12 @@
 		191CC43A2375AD34003AA481 /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
 		191CC43D2375AFDE003AA481 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		191CC43F2375B0EA003AA481 /* PostListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListTableViewController.swift; sourceTree = "<group>"; };
+		1945D539237C5C54005CF923 /* GamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewController.swift; sourceTree = "<group>"; };
+		1945D53B237C5C67005CF923 /* GameViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewCell.swift; sourceTree = "<group>"; };
+		1945D53D237C5F32005CF923 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1946A3AA237A981A001D5046 /* DrinkViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewCell.swift; sourceTree = "<group>"; };
+		1946A3AC237A9832001D5046 /* DrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewController.swift; sourceTree = "<group>"; };
+		1946A3AE237A984B001D5046 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		19DAA9C02377507C00E4B314 /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 		19DAA9C2237751E000E4B314 /* SnackListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackListTableViewController.swift; sourceTree = "<group>"; };
 		19DAA9C42377523700E4B314 /* SnackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackViewCell.swift; sourceTree = "<group>"; };
@@ -113,6 +125,10 @@
 				191CC43F2375B0EA003AA481 /* PostListTableViewController.swift */,
 				19DAA9C2237751E000E4B314 /* SnackListTableViewController.swift */,
 				19DAA9C42377523700E4B314 /* SnackViewCell.swift */,
+				1946A3AA237A981A001D5046 /* DrinkViewCell.swift */,
+				1946A3AC237A9832001D5046 /* DrinksTableViewController.swift */,
+				1945D539237C5C54005CF923 /* GamesTableViewController.swift */,
+				1945D53B237C5C67005CF923 /* GameViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -122,6 +138,8 @@
 			children = (
 				191CC43D2375AFDE003AA481 /* Post.swift */,
 				19DAA9C02377507C00E4B314 /* Snack.swift */,
+				1946A3AE237A984B001D5046 /* Drink.swift */,
+				1945D53D237C5F32005CF923 /* Game.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +280,7 @@
 				191CC4402375B0EA003AA481 /* PostListTableViewController.swift in Sources */,
 				19DAA9C3237751E000E4B314 /* SnackListTableViewController.swift in Sources */,
 				191CC42423706666003AA481 /* LoginViewController.swift in Sources */,
+				1945D53C237C5C67005CF923 /* GameViewCell.swift in Sources */,
 				19DAA9C12377507C00E4B314 /* Snack.swift in Sources */,
 				191CC43E2375AFDE003AA481 /* Post.swift in Sources */,
 				191CC43B2375AD34003AA481 /* PostViewCell.swift in Sources */,
@@ -269,10 +288,15 @@
 				191CC43923759F92003AA481 /* ReservationsItemViewController.swift in Sources */,
 				191CC40B23705BF4003AA481 /* AppDelegate.swift in Sources */,
 				191CC40D23705BF4003AA481 /* SceneDelegate.swift in Sources */,
+				1945D53E237C5F32005CF923 /* Game.swift in Sources */,
 				191CC42623706673003AA481 /* SignUpViewController.swift in Sources */,
 				19DAA9C52377523700E4B314 /* SnackViewCell.swift in Sources */,
+				1946A3AD237A9832001D5046 /* DrinksTableViewController.swift in Sources */,
+				1945D53A237C5C54005CF923 /* GamesTableViewController.swift in Sources */,
 				191CC43523759F70003AA481 /* DiscoveryItemViewController.swift in Sources */,
+				1946A3AF237A984B001D5046 /* Drink.swift in Sources */,
 				191CC42823706680003AA481 /* WelcomViewController.swift in Sources */,
+				1946A3AB237A981A001D5046 /* DrinkViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

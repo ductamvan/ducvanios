@@ -16,6 +16,10 @@ class DiscoveryItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.SnackButton.imageView?.layer.cornerRadius = 30;
+        self.DrinksButton.imageView?.layer.cornerRadius = 30;
+        self.GamesButton.imageView?.layer.cornerRadius = 30;
+        
      
 
         // Do any additional setup after loading the view.
@@ -26,7 +30,14 @@ class DiscoveryItemViewController: UIViewController {
         performSegue(withIdentifier: "snackstable", sender: self);
     }
    
- 
+   
     
-
+    @IBAction func drinksButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "drinkstable", sender: self); 
+    }
+    
+    @IBAction func gamesButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "gamestable", sender: self)
+    }
+    
 }

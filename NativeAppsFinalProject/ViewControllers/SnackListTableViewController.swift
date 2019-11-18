@@ -14,21 +14,15 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
     var CurrentSnacks = [Snack] ();
 
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet var SnackTableView: UITableView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.SnackTableView.delegate = self;
-        self.SnackTableView.dataSource = self;
+        
         Snacks = createSnacks();
         CurrentSnacks = Snacks;
         
-       
-        
-       
-
  
     }
     
@@ -90,50 +84,54 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
         
     }
     
-    func searchBar(_ searchbar : UISearchBar, textDidChange searchText : String){
+    
+   
+    
+    @available(iOS 3.0, *)
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
+        switch selectedScope{
+               case 0 : CurrentSnacks = createSnacks();
+                   tableView.reloadData();
+                   
+               case 1 :
+                   CurrentSnacks = createSnacks().filter({ snack -> Bool in
+                       snack.Categorie == "chips"
+                   });
+                   tableView.reloadData();
+               case 2 :
+                   CurrentSnacks = createSnacks().filter({ snack -> Bool in
+                       snack.Categorie == "worst";
+                   });
+                   tableView.reloadData();
+                   
+               default:
+                   return;
+               }
+    }
+    
+    @available(iOS 2.0, *)
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         CurrentSnacks = Snacks.filter({ snack -> Bool in
-            switch searchbar.selectedScopeButtonIndex{
-            case 0 :
-                if searchText.isEmpty{ return snack.Categorie == "chips" || snack.Categorie == "worst" }
-                return snack.Naam.contains(searchText);
-            case 1 :
-                if searchText.isEmpty{return snack.Categorie == "chips" }
-                return snack.Naam.contains(searchText) && snack.Categorie == "chips";
-            case 2 :
-                if searchText.isEmpty{return snack.Categorie == "worst";}
-                return snack.Naam.contains(searchText) && snack.Categorie == "worst";
-            default:
-                return false;
-            }
-            
-        })
-        tableView.reloadData();
+                 switch searchBar.selectedScopeButtonIndex{
+                 case 0 :
+                     if searchText.isEmpty{ return snack.Categorie == "chips" || snack.Categorie == "worst" }
+                     return snack.Naam.contains(searchText);
+                 case 1 :
+                     if searchText.isEmpty{return snack.Categorie == "chips" }
+                     return snack.Naam.contains(searchText) && snack.Categorie == "chips";
+                 case 2 :
+                     if searchText.isEmpty{return snack.Categorie == "worst";}
+                     return snack.Naam.contains(searchText) && snack.Categorie == "worst";
+                 default:
+                     return false;
+                 }
+                 
+             })
+             tableView.reloadData();
     }
     
     
-    func searchBar(_ searchbar : UISearchBar, selectedScopeButtonIndexDidChange selectedScope : Int){
-        switch selectedScope{
-        case 0 : CurrentSnacks = createSnacks();
-            tableView.reloadData();
-            
-        case 1 :
-            CurrentSnacks = createSnacks().filter({ snack -> Bool in
-                snack.Categorie == "chips"
-            });
-            tableView.reloadData();
-        case 2 :
-            CurrentSnacks = createSnacks().filter({ snack -> Bool in
-                snack.Categorie == "worst";
-            });
-            tableView.reloadData();
-            
-        default:
-            return;
-            
-        }
-       
-           
-       }
+    
 
     // MARK: - Table view data source
 
@@ -141,9 +139,6 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
           return CurrentSnacks.count;
       }
 
-   
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let snackie = CurrentSnacks[indexPath.row];
@@ -155,7 +150,7 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
         cell.snackDescription.text = snackie.Beschrijving;
         
 
-        // Configure the cell...
+      
 
         return cell
     }

@@ -73,6 +73,7 @@ class PostListTableViewController: UITableViewController{
         
         let postie = posts[indexPath.row];
         let cell = tableView.dequeueReusableCell(withIdentifier: "postcell", for : indexPath) as! PostViewCell;
+        
         cell.PersonNameImage.text = postie.Name;
         cell.PostContext.text = postie.Text;
         cell.PostImage.image = postie.Image;
