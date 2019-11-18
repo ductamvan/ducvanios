@@ -74,18 +74,19 @@ class SignUpViewController: UIViewController {
         }
         else {
             //email en passwoord "cleanen"
-            let cleanEmail =  emailTextField.text//!.trimmingCharacters(in: .whitespacesAndNewlines);
-            let cleanPassword = passwordTextField.text//!.trimmingCharacters(in: .whitespacesAndNewlines);
-            let cleanFirstName = firstNameTextField.text//!.trimmingCharacters(in: .whitespacesAndNewlines);
-            let cleanLastName = lastNameTextField.text//!.trimmingCharacters(in: .whitespacesAndNewlines);
+            let cleanEmail =  emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines);
+            let cleanPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines);
+            let cleanFirstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines);
+            let cleanLastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines);
             // user was created successfully firstname and lastname stored.
             //new user gemaakt in firebase autheratization
             
-            Auth.auth().createUser(withEmail: cleanEmail!, password: cleanPassword!){
+            Auth.auth().createUser(withEmail: cleanEmail, password: cleanPassword){
                 (result,error) in
                 //there was an error created when creating an user
                 if error != nil{
-                    self.transitionToWelcomeScreen(); //testcode
+                    //self.transitionToWelcomeScreen(); //testcode
+                    print(error?.localizedDescription as Any);
                     self.ErrorDetectionLabel.text = "Error Creating User";
                     self.ErrorDetectionLabel.alpha = 1;
                     //error geven in alert
@@ -101,7 +102,7 @@ class SignUpViewController: UIViewController {
                     //uid van user word ook vastgesteld door user uid te nemen van het gecreeerde object
                     let database = Firestore.firestore();
                     database.collection("users")
-                    .addDocument(data:["firstname" : cleanFirstName!, "lastname" : cleanLastName!, "uid" : result!.user.uid]){
+                        .addDocument(data:["firstname" : cleanFirstName, "lastname" : cleanLastName, "uid" : result!.user.uid]){
                         (error) in
                         if error != nil {
                             self.ErrorDetectionLabel.text = "User Data Couldn't validate";
