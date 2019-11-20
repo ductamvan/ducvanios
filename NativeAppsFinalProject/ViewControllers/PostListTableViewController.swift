@@ -12,50 +12,31 @@ import Firebase
 
 
 
+
 class PostListTableViewController: UITableViewController{
     
-    var posts : [Post] = [];
+  
 
     @IBOutlet var PostTableView: UITableView!
+    let ref = Database.database().reference().child("posts");
+      var posts : [Post] = [];
     
+    @IBOutlet weak var postButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.postButton.layer.cornerRadius = 15;
         self.PostTableView.delegate = self;
         self.PostTableView.dataSource = self;
-        posts = createPosts();
-    
+        
 
     }
     
+  
     
     
     //posts creatie
-    func createPosts() -> [Post]{
-        let post1 = Post(name: "News Distributor"
-            ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
-            ,image: UIImage(named: "unlock dialogue")! );
-        let post2 = Post(name: "News Distributor"
-        ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
-        ,image: UIImage(named: "unlock dialogue")! );
-        let post3 = Post(name: "News Distributor"
-        ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
-        ,image: UIImage(named: "unlock dialogue")! );
-        let post4 = Post(name: "News Distributor"
-        ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
-        ,image: UIImage(named: "unlock dialogue")! );
-        let post5 = Post(name: "News Distributor"
-        ,text: "Unlock Dialogue will perform this Saturday on our mini-stage. Doors 22h. Lead Singer Jelle Van De Wiele will sing us his latest songs."
-        ,image: UIImage(named: "unlock dialogue")! );
-        var posten : [Post] = [];
-        posten.append(post1);
-        posten.append(post2);
-        posten.append(post3);
-        posten.append(post4);
-        posten.append(post5);
-        
-        return posten;
-    }
+    
     
     
 
@@ -74,9 +55,10 @@ class PostListTableViewController: UITableViewController{
         let postie = posts[indexPath.row];
         let cell = tableView.dequeueReusableCell(withIdentifier: "postcell", for : indexPath) as! PostViewCell;
         
-        cell.PersonNameImage.text = postie.Name;
+        
         cell.PostContext.text = postie.Text;
-        cell.PostImage.image = postie.Image;
+        
+        
         
         return cell;
         

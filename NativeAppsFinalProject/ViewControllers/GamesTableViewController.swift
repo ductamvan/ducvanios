@@ -11,7 +11,8 @@ import UIKit
 class GamesTableViewController: UITableViewController, UISearchBarDelegate{
     var Games = [Game] ();
     var CurrentGames = [Game] ();
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Games = createElements();
@@ -82,7 +83,9 @@ class GamesTableViewController: UITableViewController, UISearchBarDelegate{
                    })
                    tableView.reloadData();
           }
-
+    
+   
+    
     // MARK: - Table view data source
 
  

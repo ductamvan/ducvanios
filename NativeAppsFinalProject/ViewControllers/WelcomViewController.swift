@@ -11,6 +11,7 @@ import UIKit
 class WelcomViewController: UIViewController {
 
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var welcomsNaam: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

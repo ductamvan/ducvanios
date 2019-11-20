@@ -15,4 +15,8 @@ class GameViewCell: UITableViewCell {
     @IBOutlet weak var GamePrice: UILabel!
     @IBOutlet weak var GameDescription: UILabel!
     
+    
+   
+   
+    
 }

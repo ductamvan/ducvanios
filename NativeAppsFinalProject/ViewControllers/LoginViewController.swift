@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class LoginViewController: UIViewController {
     //outlets
@@ -16,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
 
     @IBOutlet weak var signUpButton: UIButton!
+    let ref = Database.database().reference()
     
    
     @IBOutlet weak var ErrorDetectionLabel: UILabel!
@@ -61,6 +63,8 @@ class LoginViewController: UIViewController {
                 self.transitionToWelcomeScreen();
             }
         }
+    }
+
 }
     
-}
+
