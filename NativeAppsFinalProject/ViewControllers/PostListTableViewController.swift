@@ -17,10 +17,12 @@ class PostListTableViewController: UITableViewController{
     
   
 
-    @IBOutlet var PostTableView: UITableView!
-    let ref = Database.database().reference().child("posts");
-      var posts : [Post] = [];
     
+    
+    var posts : [Post] = [];
+    
+    
+    @IBOutlet var PostTableView: UITableView!
     @IBOutlet weak var postButton: UIButton!
     
     override func viewDidLoad() {
@@ -30,6 +32,26 @@ class PostListTableViewController: UITableViewController{
         self.PostTableView.dataSource = self;
         
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //clear posts
+        self.posts.removeAll();
+        //reference
+        let ref = Database.database().reference();
+        //retrieve posts and listen for changes
+        ref.child("posts").observe(.childAdded, with: {
+            (snapshot) in
+            let post = snapshot.value as? NSDictionary;
+            if let actualpost  = post {
+                let tekst : String = actualpost.value(forKey: "text") as! String;
+                self.posts.append(Post(text: tekst));
+                self.posts.reverse();
+                self.tableView.reloadData();
+            }
+        });
+        //reload table
+        
     }
     
   

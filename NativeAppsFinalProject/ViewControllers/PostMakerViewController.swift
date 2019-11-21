@@ -37,7 +37,7 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
             if error == nil {
                 self.dismiss(animated: true, completion: nil)
             } else{
-                
+                print("unexpected error");
             }
             
         });
