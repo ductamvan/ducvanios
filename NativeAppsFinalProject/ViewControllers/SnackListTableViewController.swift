@@ -22,6 +22,7 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
         
         Snacks = createSnacks();
         CurrentSnacks = Snacks;
+        self.navigationController?.isNavigationBarHidden = false;
         
  
     }
@@ -149,7 +150,7 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
         cell.snackPrice.text = "\(snackie.Prijs)";
         cell.snackDescription.text = snackie.Beschrijving;
         
-
+         cell.selectionStyle = .none;
       
 
         return cell

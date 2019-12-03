@@ -11,12 +11,14 @@ import UIKit
 import Firebase
 
 public struct Post {
-   
+    var Persoon : String = "";
     var Text : String = "";
     
     
-    init(text : String) {
+    init(text : String, persoon : String) {
         self.Text = text;
+        self.Persoon = persoon;
+        
         
     }
     

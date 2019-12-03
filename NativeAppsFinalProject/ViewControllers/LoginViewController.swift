@@ -27,12 +27,17 @@ class LoginViewController: UIViewController {
         //error messages invisible maken
         setUpElements();
         
+        
      
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.modalPresentationStyle = .fullScreen;
     }
     
      //error messages invisible maken
     func setUpElements() {
         ErrorDetectionLabel.alpha = 0;
+        self.navigationController?.setNavigationBarHidden(false, animated: true);
     }
     
    

@@ -8,6 +8,7 @@
 import UIKit
 //import FirebaseAuth
 import Firebase
+
 class SignUpViewController: UIViewController {
     //outlets
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -21,10 +22,15 @@ class SignUpViewController: UIViewController {
         //error messages invisble maken
         setUpElements()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+         self.modalPresentationStyle = .fullScreen;
+     }
 
     //error messages invisble maken
     func setUpElements(){
         ErrorDetectionLabel.alpha = 0;
+        self.navigationController?.setNavigationBarHidden(false, animated: true);
     }
 
     func validateFields() -> String?{
@@ -100,6 +106,23 @@ class SignUpViewController: UIViewController {
                     //database wordt aangesproken
                     //nieuwe user in map users gestoken
                     //uid van user word ook vastgesteld door user uid te nemen van het gecreeerde object
+                    let postref = Database.database().reference().child("users").childByAutoId();
+                    let postObject =
+                             [
+                                "naam" : "\(self.firstNameTextField.text! + " " + self.lastNameTextField.text!)",
+                                "uid" : "\(Auth.auth().currentUser?.uid ?? "")"
+                               
+                                 ] as [String : Any];
+                    
+                    postref.setValue(postObject, withCompletionBlock: {
+                                 (error, result) in
+                                 if error == nil {
+                                    print("succes creating user");
+                                 } else{
+                                     print("unexpected error");
+                                 }
+                                 
+                             });
                     let database = Firestore.firestore();
                     database.collection("users")
                         .addDocument(data:["firstname" : cleanFirstName, "lastname" : cleanLastName, "uid" : result!.user.uid]){
@@ -113,5 +136,5 @@ class SignUpViewController: UIViewController {
             }
         }
     }
-    
+
 }

@@ -29,6 +29,11 @@
 		1946A3AB237A981A001D5046 /* DrinkViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1946A3AA237A981A001D5046 /* DrinkViewCell.swift */; };
 		1946A3AD237A9832001D5046 /* DrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1946A3AC237A9832001D5046 /* DrinksTableViewController.swift */; };
 		1946A3AF237A984B001D5046 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1946A3AE237A984B001D5046 /* Drink.swift */; };
+		19AEBB3A23898AD3007FEB28 /* ReservationMakerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AEBB3923898AD3007FEB28 /* ReservationMakerViewController.swift */; };
+		19D34900238C5281009839E2 /* MyReservationsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D348FF238C5281009839E2 /* MyReservationsListTableViewController.swift */; };
+		19D34902238C52AF009839E2 /* ReservationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D34901238C52AF009839E2 /* ReservationViewCell.swift */; };
+		19D34904238C53A6009839E2 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D34903238C53A6009839E2 /* Reservation.swift */; };
+		19D52AF72395554D00B56000 /* currentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D52AF62395554D00B56000 /* currentUser.swift */; };
 		19DAA9C12377507C00E4B314 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAA9C02377507C00E4B314 /* Snack.swift */; };
 		19DAA9C3237751E000E4B314 /* SnackListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAA9C2237751E000E4B314 /* SnackListTableViewController.swift */; };
 		19DAA9C52377523700E4B314 /* SnackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DAA9C42377523700E4B314 /* SnackViewCell.swift */; };
@@ -61,6 +66,11 @@
 		1946A3AA237A981A001D5046 /* DrinkViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewCell.swift; sourceTree = "<group>"; };
 		1946A3AC237A9832001D5046 /* DrinksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksTableViewController.swift; sourceTree = "<group>"; };
 		1946A3AE237A984B001D5046 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		19AEBB3923898AD3007FEB28 /* ReservationMakerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationMakerViewController.swift; sourceTree = "<group>"; };
+		19D348FF238C5281009839E2 /* MyReservationsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReservationsListTableViewController.swift; sourceTree = "<group>"; };
+		19D34901238C52AF009839E2 /* ReservationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewCell.swift; sourceTree = "<group>"; };
+		19D34903238C53A6009839E2 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		19D52AF62395554D00B56000 /* currentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentUser.swift; sourceTree = "<group>"; };
 		19DAA9C02377507C00E4B314 /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 		19DAA9C2237751E000E4B314 /* SnackListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackListTableViewController.swift; sourceTree = "<group>"; };
 		19DAA9C42377523700E4B314 /* SnackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +142,9 @@
 				1945D539237C5C54005CF923 /* GamesTableViewController.swift */,
 				1945D53B237C5C67005CF923 /* GameViewCell.swift */,
 				19270DD7238558C800EF671C /* PostMakerViewController.swift */,
+				19AEBB3923898AD3007FEB28 /* ReservationMakerViewController.swift */,
+				19D348FF238C5281009839E2 /* MyReservationsListTableViewController.swift */,
+				19D34901238C52AF009839E2 /* ReservationViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -143,6 +156,8 @@
 				19DAA9C02377507C00E4B314 /* Snack.swift */,
 				1946A3AE237A984B001D5046 /* Drink.swift */,
 				1945D53D237C5F32005CF923 /* Game.swift */,
+				19D34903238C53A6009839E2 /* Reservation.swift */,
+				19D52AF62395554D00B56000 /* currentUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +297,7 @@
 			files = (
 				191CC4402375B0EA003AA481 /* PostListTableViewController.swift in Sources */,
 				19DAA9C3237751E000E4B314 /* SnackListTableViewController.swift in Sources */,
+				19D34900238C5281009839E2 /* MyReservationsListTableViewController.swift in Sources */,
 				191CC42423706666003AA481 /* LoginViewController.swift in Sources */,
 				1945D53C237C5C67005CF923 /* GameViewCell.swift in Sources */,
 				19DAA9C12377507C00E4B314 /* Snack.swift in Sources */,
@@ -295,10 +311,14 @@
 				191CC42623706673003AA481 /* SignUpViewController.swift in Sources */,
 				19DAA9C52377523700E4B314 /* SnackViewCell.swift in Sources */,
 				1946A3AD237A9832001D5046 /* DrinksTableViewController.swift in Sources */,
+				19D52AF72395554D00B56000 /* currentUser.swift in Sources */,
 				1945D53A237C5C54005CF923 /* GamesTableViewController.swift in Sources */,
+				19D34902238C52AF009839E2 /* ReservationViewCell.swift in Sources */,
 				191CC43523759F70003AA481 /* DiscoveryItemViewController.swift in Sources */,
 				1946A3AF237A984B001D5046 /* Drink.swift in Sources */,
+				19AEBB3A23898AD3007FEB28 /* ReservationMakerViewController.swift in Sources */,
 				191CC42823706680003AA481 /* WelcomViewController.swift in Sources */,
+				19D34904238C53A6009839E2 /* Reservation.swift in Sources */,
 				19270DD8238558C800EF671C /* PostMakerViewController.swift in Sources */,
 				1946A3AB237A981A001D5046 /* DrinkViewCell.swift in Sources */,
 			);

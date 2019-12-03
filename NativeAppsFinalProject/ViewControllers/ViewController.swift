@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -18,14 +19,23 @@ class ViewController: UIViewController {
         //github connection test.
         print("github connect success");
         setUpElements();
-      
+        do {
+            try Auth.auth().signOut();
+        } catch let err  {
+            print(err);
+        }
+    }
      
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true);
     }
     
     //elements plaatsen en bewereken
     func setUpElements(){
         loginButton.layer.cornerRadius = 50;
         singUpButton.layer.cornerRadius = 50;
+        self.navigationController?.setNavigationBarHidden(true, animated: true);
         
     }
     

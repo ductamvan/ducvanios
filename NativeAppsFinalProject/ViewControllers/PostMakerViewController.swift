@@ -15,8 +15,28 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var postContext: UITextView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        postContext.layer.borderWidth = 1
+        postContext.layer.borderColor = UIColor.white.cgColor;
+        
+        
+    }
+    
+    func CurrentPerson()-> String{
+        var person : String = "";
+        let uid = Auth.auth().currentUser!.uid;
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: {
+            snapshot in
+            if let dict = snapshot.value as? [String : AnyObject]{
+                person = dict["naam"] as! String;
+            }
+                
+            
+            });
+        return person;
         
     }
     
@@ -29,7 +49,7 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
         let postObject =
         [
             "text" : postContext.text!,
-            "timestamp" : [".sv" : "timestamp"]
+            "persoon" : "\(self.CurrentPerson())"
             ] as [String : Any];
         
         postref.setValue(postObject, withCompletionBlock: {

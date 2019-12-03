@@ -22,8 +22,11 @@ class PostListTableViewController: UITableViewController{
     var posts : [Post] = [];
     
     
+    @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet var PostTableView: UITableView!
+    
     @IBOutlet weak var postButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +48,9 @@ class PostListTableViewController: UITableViewController{
             let post = snapshot.value as? NSDictionary;
             if let actualpost  = post {
                 let tekst : String = actualpost.value(forKey: "text") as! String;
-                self.posts.append(Post(text: tekst));
+                let pers : String = actualpost.value(forKey: "persoon") as! String;
+              
+                self.posts.append(Post(text: tekst,persoon: pers));
                 self.posts.reverse();
                 self.tableView.reloadData();
             }
@@ -54,7 +59,30 @@ class PostListTableViewController: UITableViewController{
         
     }
     
-  
+    @IBAction func refreshButtonPressed(_ sender: Any) {
+        //clear posts
+        self.posts.removeAll();
+               //reference
+        let ref = Database.database().reference();
+               //retrieve posts and listen for changes
+        ref.child("posts").observe(.childAdded, with: {
+                   (snapshot) in
+        let post = snapshot.value as? NSDictionary;
+        if let actualpost  = post {
+        let tekst : String = actualpost.value(forKey: "text") as! String;
+        let pers : String = actualpost.value(forKey: "persoon") as! String;
+                     
+        self.posts.append(Post(text: tekst,persoon: pers));
+        self.posts.reverse();
+        self.tableView.reloadData();
+       
+        print("page refreshed");
+            }
+            
+        }
+        
+    );
+    }
     
     
     //posts creatie
@@ -67,7 +95,7 @@ class PostListTableViewController: UITableViewController{
 
     //in table view steken
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count;
     }
 
@@ -79,6 +107,12 @@ class PostListTableViewController: UITableViewController{
         
         
         cell.PostContext.text = postie.Text;
+        cell.PersonNameImage.text = postie.Persoon;
+        
+        
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.gray.cgColor;
+        
         
         
         
@@ -91,3 +125,4 @@ class PostListTableViewController: UITableViewController{
    
 
 }
+

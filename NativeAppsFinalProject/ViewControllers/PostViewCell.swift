@@ -13,5 +13,8 @@ class PostViewCell: UITableViewCell {
     @IBOutlet weak var PersonNameImage: UILabel!
     @IBOutlet weak var PostContext: UILabel!
     
-    
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var numberOfLikes: UILabel!
+    @IBOutlet weak var numberOfDislikes: UILabel!
 }

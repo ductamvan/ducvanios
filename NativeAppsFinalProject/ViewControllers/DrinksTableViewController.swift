@@ -19,6 +19,7 @@ class DrinksTableViewController: UITableViewController, UISearchBarDelegate{
         super.viewDidLoad();
         Drinks = createDrinks();
         CurrentDrinks = Drinks;
+        self.navigationController?.isNavigationBarHidden = false;
     }
     
     func createDrinks () -> [Drink] {
@@ -125,6 +126,9 @@ class DrinksTableViewController: UITableViewController, UISearchBarDelegate{
         cell.DrinkName.text = drinkie.Naam;
         cell.DrinkPerc.text = "\(drinkie.AlcoholPerc)";
         cell.DrinkPrice.text = "\(drinkie.Prijs)";
+        
+        
+         cell.selectionStyle = .none;
         
         return cell;
     }

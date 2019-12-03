@@ -17,6 +17,7 @@ class GamesTableViewController: UITableViewController, UISearchBarDelegate{
         super.viewDidLoad()
         Games = createElements();
         CurrentGames = Games;
+        self.navigationController?.isNavigationBarHidden = false;
 
       
     }
@@ -51,7 +52,7 @@ class GamesTableViewController: UITableViewController, UISearchBarDelegate{
                          });
                          tableView.reloadData();
                      case 2 :
-                       print("lololol");
+                       
                          CurrentGames = createElements().filter({ game -> Bool in
                              game.Categorie == "board";
                          });
@@ -84,6 +85,16 @@ class GamesTableViewController: UITableViewController, UISearchBarDelegate{
                    tableView.reloadData();
           }
     
+  
+    
+    
+   
+    
+    
+    
+
+    
+    
    
     
     // MARK: - Table view data source
@@ -106,8 +117,12 @@ class GamesTableViewController: UITableViewController, UISearchBarDelegate{
         cell.GameDescription.text = gamie.Description;
         cell.GamePrice.text = "\(gamie.Price)";
         
+         cell.selectionStyle = .none;
+        
         return cell
     }
+    
+    
     
 
    

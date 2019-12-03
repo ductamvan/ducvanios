@@ -20,9 +20,11 @@ class DiscoveryItemViewController: UIViewController {
         self.DrinksButton.imageView?.layer.cornerRadius = 30;
         self.GamesButton.imageView?.layer.cornerRadius = 30;
         
-     
-
+        
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true;
     }
     
 
