@@ -919,27 +919,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwC-zr-juG">
+                                <rect key="frame" x="109" y="703" width="196" height="34"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="HxD-9j-CIy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="Omm-nv-EDc" eventType="touchUpInside" id="M3V-ax-d4f"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="74" translatesAutoresizingMaskIntoConstraints="NO" id="vQl-iz-zam">
-                                <rect key="frame" x="124" y="148" width="166" height="460"/>
+                                <rect key="frame" x="170.5" y="190" width="0.0" height="35"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jc-3G-9vd">
+                                <rect key="frame" x="97" y="140" width="221" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="de2-Fo-kN1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="21"/>
+                                <color key="textColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-F3-lX9">
+                                <rect key="frame" x="36" y="322" width="342" height="104"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2j-tL-SOy">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0c-Cw-asw">
                                         <rect key="frame" x="0.0" y="0.0" width="166" height="104"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="104" id="m3P-zk-aqo"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="My Reservations">
-                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="2SI-P7-uLD" kind="show" id="po4-7n-zew"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0c-Cw-asw">
-                                        <rect key="frame" x="0.0" y="178" width="166" height="119"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="15"/>
                                         <state key="normal" title="Make Reservation">
                                             <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -947,36 +959,50 @@
                                             <segue destination="s7c-M0-s30" kind="show" id="aHL-Mn-bAD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwC-zr-juG">
-                                        <rect key="frame" x="0.0" y="371" width="166" height="89"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2j-tL-SOy">
+                                        <rect key="frame" x="174" y="0.0" width="168" height="104"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
-                                        <state key="normal" title="Log Out">
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="15"/>
+                                        <state key="normal" title="My Reservations">
                                             <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="logOutButtonPressed:" destination="Omm-nv-EDc" eventType="touchUpInside" id="M3V-ax-d4f"/>
+                                            <segue destination="2SI-P7-uLD" kind="show" id="po4-7n-zew"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="f2j-tL-SOy" firstAttribute="width" secondItem="S0c-Cw-asw" secondAttribute="width" id="gMw-UV-i8J"/>
-                                    <constraint firstItem="S0c-Cw-asw" firstAttribute="height" secondItem="BwC-zr-juG" secondAttribute="height" multiplier="1.33708" id="gxa-Ak-9di"/>
-                                    <constraint firstItem="S0c-Cw-asw" firstAttribute="width" secondItem="BwC-zr-juG" secondAttribute="width" id="p6W-4q-Nsp"/>
-                                    <constraint firstItem="f2j-tL-SOy" firstAttribute="height" secondItem="S0c-Cw-asw" secondAttribute="height" multiplier="0.87395" id="zTJ-vI-czI"/>
+                                    <constraint firstItem="S0c-Cw-asw" firstAttribute="height" secondItem="f2j-tL-SOy" secondAttribute="height" id="0AB-3w-W4n"/>
+                                    <constraint firstItem="S0c-Cw-asw" firstAttribute="width" secondItem="f2j-tL-SOy" secondAttribute="width" multiplier="0.989362" id="lF4-Xf-Zfi"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.fill.badge.checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BrH-aY-SXl">
+                                <rect key="frame" x="182" y="98.5" width="50" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vQl-iz-zam" firstAttribute="centerX" secondItem="IAv-MP-XlA" secondAttribute="centerX" id="3m6-3q-cRh"/>
-                            <constraint firstItem="vQl-iz-zam" firstAttribute="top" secondItem="jwC-7G-BbO" secondAttribute="top" constant="148" id="wt9-4t-tGy"/>
+                            <constraint firstItem="RMI-F3-lX9" firstAttribute="leading" secondItem="jwC-7G-BbO" secondAttribute="leading" constant="36" id="0Pu-FM-vQH"/>
+                            <constraint firstItem="jwC-7G-BbO" firstAttribute="bottom" secondItem="BwC-zr-juG" secondAttribute="bottom" constant="22" id="0TG-FU-Ohr"/>
+                            <constraint firstItem="0jc-3G-9vd" firstAttribute="top" secondItem="IAv-MP-XlA" secondAttribute="top" constant="140" id="2WT-Fh-cO2"/>
+                            <constraint firstItem="RMI-F3-lX9" firstAttribute="centerX" secondItem="IAv-MP-XlA" secondAttribute="centerX" id="4Cv-W1-mbp"/>
+                            <constraint firstAttribute="bottom" secondItem="vQl-iz-zam" secondAttribute="bottom" constant="617" id="Kym-yp-dQC"/>
+                            <constraint firstItem="BwC-zr-juG" firstAttribute="centerX" secondItem="RMI-F3-lX9" secondAttribute="centerX" id="WfC-yz-jS9"/>
+                            <constraint firstItem="BwC-zr-juG" firstAttribute="leading" secondItem="jwC-7G-BbO" secondAttribute="leading" constant="109" id="aIr-M1-L5w"/>
+                            <constraint firstItem="vQl-iz-zam" firstAttribute="leading" secondItem="jwC-7G-BbO" secondAttribute="leading" constant="170.5" id="fig-b8-kMo"/>
+                            <constraint firstItem="0jc-3G-9vd" firstAttribute="leading" secondItem="jwC-7G-BbO" secondAttribute="leading" constant="97" id="hGU-Cu-8al"/>
+                            <constraint firstAttribute="bottom" secondItem="RMI-F3-lX9" secondAttribute="bottom" constant="416" id="hSs-QU-qrA"/>
+                            <constraint firstItem="0jc-3G-9vd" firstAttribute="centerX" secondItem="vQl-iz-zam" secondAttribute="centerX" constant="37" id="hse-Wm-eVl"/>
+                            <constraint firstItem="RMI-F3-lX9" firstAttribute="top" secondItem="IAv-MP-XlA" secondAttribute="top" constant="322" id="hzq-Uy-Cc1"/>
+                            <constraint firstItem="vQl-iz-zam" firstAttribute="top" secondItem="0jc-3G-9vd" secondAttribute="bottom" constant="8" id="ykd-14-Lo4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jwC-7G-BbO"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" image="person.crop.square.fill" catalog="system" id="kUf-bz-cnA"/>
                     <navigationItem key="navigationItem" id="Zps-da-EmK"/>
                     <connections>
+                        <outlet property="currentUserNaam" destination="0jc-3G-9vd" id="XFc-nv-U9i"/>
                         <outlet property="logOutButton" destination="BwC-zr-juG" id="tdx-B9-PH0"/>
                         <outlet property="makeReservationButton" destination="S0c-Cw-asw" id="qZX-uB-Ofs"/>
                         <outlet property="myReservationButton" destination="f2j-tL-SOy" id="TUa-7N-DvZ"/>
@@ -1187,8 +1213,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="6Nl-Gm-bd2" kind="relationship" relationship="viewControllers" id="rFq-eT-hfl"/>
-                        <segue destination="Omm-nv-EDc" kind="relationship" relationship="viewControllers" id="LJv-eL-k1v"/>
                         <segue destination="6PN-Vo-vE8" kind="relationship" relationship="viewControllers" id="DX7-Me-qqn"/>
+                        <segue destination="Omm-nv-EDc" kind="relationship" relationship="viewControllers" id="LJv-eL-k1v"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOp-dm-MfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1246,6 +1272,7 @@
         <image name="molentje" width="535" height="720"/>
         <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
+        <image name="person.crop.circle.fill.badge.checkmark" catalog="system" width="64" height="50"/>
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
         <image name="repeat" catalog="system" width="64" height="48"/>
         <image name="snacks" width="1920" height="1080"/>

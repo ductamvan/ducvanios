@@ -8,21 +8,43 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class ReservationsItemViewController: UIViewController {
 
     @IBOutlet weak var makeReservationButton: UIButton!
     @IBOutlet weak var myReservationButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var currentUserNaam: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.makeReservationButton.layer.cornerRadius = 15;
-        self.myReservationButton.layer.cornerRadius = 15;
+        self.makeReservationButton.layer.cornerRadius = 10;
+        self.myReservationButton.layer.cornerRadius = 10;
         self.logOutButton.layer.cornerRadius = 15;
-       
+        
     
      
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.setCurrentUserNaam();
+        
+    }
+    
+    
+    func setCurrentUserNaam(){
+        let uid = Auth.auth().currentUser?.uid;
+        Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: {
+            snapshot in
+            if let dict = snapshot.value as? [String : Any]{
+                
+                self.currentUserNaam.text = "\(dict["name"] as! String)" ;
+                
+            }
+        
+        });
+        
     }
     
     func transitionToBeginScreen(){
