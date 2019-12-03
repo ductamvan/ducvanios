@@ -60,6 +60,7 @@ class SignUpViewController: UIViewController {
     //transitie naar het welkom scherm
     func transitionToWelcomeScreen(){
         let WelcomeScreenVC = storyboard?.instantiateViewController(identifier: "WelcomeScreenVC") as? WelcomViewController;
+        
         view.window?.rootViewController = WelcomeScreenVC;
         view.window?.makeKeyAndVisible();
     }
@@ -88,7 +89,7 @@ class SignUpViewController: UIViewController {
             //new user gemaakt in firebase autheratization
             
             Auth.auth().createUser(withEmail: cleanEmail, password: cleanPassword){
-                (result,error) in
+                (user ,error) in
                 //there was an error created when creating an user
                 if error != nil{
                     //self.transitionToWelcomeScreen(); //testcode
@@ -102,6 +103,25 @@ class SignUpViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil);
                     
                 }
+                guard let uid = user?.user.uid else{return};
+                
+                let ref = Database.database().reference(fromURL: "https://nativeappsiiproject.firebaseio.com/");
+                let userref = ref.child("users").child(uid);
+                let values = ["name" : cleanFirstName, "lastname" : cleanLastName, "email" : cleanEmail];
+                userref.updateChildValues(values, withCompletionBlock: {
+                    (error, ref) in
+                    if error != nil {
+                        print(error!.localizedDescription);
+                        return;
+                    }
+                    print("creation user made");
+                    
+                    self.transitionToWelcomeScreen();
+                });
+                
+                
+                
+                    /*
                 else{
                     //database wordt aangesproken
                     //nieuwe user in map users gestoken
@@ -109,7 +129,9 @@ class SignUpViewController: UIViewController {
                     let postref = Database.database().reference().child("users").childByAutoId();
                     let postObject =
                              [
-                                "naam" : "\(self.firstNameTextField.text! + " " + self.lastNameTextField.text!)",
+                                "name" : "\(self.firstNameTextField.text!)",
+                                "lastname" : "\(self.lastNameTextField.text!)",
+                                "email" : "\(self.emailTextField.text!)",
                                 "uid" : "\(Auth.auth().currentUser?.uid ?? "")"
                                
                                  ] as [String : Any];
@@ -125,14 +147,14 @@ class SignUpViewController: UIViewController {
                              });
                     let database = Firestore.firestore();
                     database.collection("users")
-                        .addDocument(data:["firstname" : cleanFirstName, "lastname" : cleanLastName, "uid" : result!.user.uid]){
+                        .addDocument(data:["firstname" : cleanFirstName, "lastname" : cleanLastName, "uid" : user!.user.uid]){
                         (error) in
                         if error != nil {
                             self.ErrorDetectionLabel.text = "User Data Couldn't validate";
                         }
                     }
                     self.transitionToWelcomeScreen();
-                }
+                }*/
             }
         }
     }

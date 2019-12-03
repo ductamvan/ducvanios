@@ -43,9 +43,14 @@ class LoginViewController: UIViewController {
    
     func transitionToWelcomeScreen(){
         let WelcomeScreenVC = storyboard?.instantiateViewController(identifier: "WelcomeScreenVC") as? WelcomViewController;
-        view.window?.rootViewController = WelcomeScreenVC;
-        view.window?.makeKeyAndVisible();
+        WelcomeScreenVC?.modalTransitionStyle = .flipHorizontal;
+        WelcomeScreenVC?.modalPresentationStyle = .fullScreen;
+        self.present(WelcomeScreenVC!, animated: true, completion: nil);
+        
+        //view.window?.rootViewController = WelcomeScreenVC;
+        //view.window?.makeKeyAndVisible();
     }
+    
     
     @IBAction func signInButtonPressed(_ sender: Any) {
         //password en email cleanen

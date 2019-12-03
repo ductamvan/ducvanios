@@ -28,8 +28,9 @@ class ReservationsItemViewController: UIViewController {
     func transitionToBeginScreen(){
         let BeginScreen = storyboard?.instantiateViewController(identifier: "beginscreenVC") as? UINavigationController;
         BeginScreen?.modalPresentationStyle = .fullScreen;
-        view.window?.rootViewController = BeginScreen;
-        view.window?.makeKeyAndVisible();
+        BeginScreen?.modalTransitionStyle = .coverVertical;
+        self.present(BeginScreen!, animated: true, completion: nil);
+        
     
        }
 

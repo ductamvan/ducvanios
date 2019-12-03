@@ -14,11 +14,15 @@ class WelcomViewController: UIViewController {
 
     
     @IBOutlet weak var WelcomsLabel: UILabel!
+    @IBOutlet weak var Naam: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsLoggedIn();
 
     }
+    
+   
     
     func checkIfUserIsLoggedIn(){
         if Auth.auth().currentUser?.uid == nil{
@@ -28,11 +32,15 @@ class WelcomViewController: UIViewController {
                 print(error);
             }
         }else {
-            Database.database().reference().child("users").observeSingleEvent(of: .value, with: {
+            let uid = Auth.auth().currentUser?.uid;
+            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: {
                 snapshot in
-                let dict = snapshot.value as? [String : Any];
-                let user = CurrentUser(uid: Auth.auth().currentUser!.uid, dict: dict!);
-                print(user);
+                if let dict = snapshot.value as? [String : Any]{
+                    
+                    self.Naam.text = "\(dict["name"] as! String + ".")" ;
+                    
+                }
+                
                 
             });
   
