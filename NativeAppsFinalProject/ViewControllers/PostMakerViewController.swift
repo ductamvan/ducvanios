@@ -7,7 +7,9 @@
 //
 
 import UIKit;
-import Firebase;
+import FirebaseDatabase
+import FirebaseAuth
+
 
 class PostMakerViewController: UIViewController, UITextViewDelegate {
     
@@ -15,17 +17,22 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var postContext: UITextView!
     
+    var currentUserNaam : String = "";
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         postContext.layer.borderWidth = 1
         postContext.layer.borderColor = UIColor.white.cgColor;
+        print(currentUserNaam as String);
+        
+        
         
         
     }
     
-    func CurrentPerson()-> String{
+    /*func CurrentPerson()-> String{
         var person : String = "";
         let uid = Auth.auth().currentUser!.uid;
         Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: {
@@ -38,30 +45,45 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
             });
         return person;
         
-    }
+    }*/
+    
+    
     
    
     
    
     @IBAction func postButtonPressed(_ sender: Any) {
-        let postref = Database.database().reference().child("posts").childByAutoId();
         
-        let postObject =
-        [
-            "text" : postContext.text!,
-            "persoon" : "\(self.CurrentPerson())"
-            ] as [String : Any];
-        
-        postref.setValue(postObject, withCompletionBlock: {
-            (error, result) in
-            if error == nil {
-                self.dismiss(animated: true, completion: nil)
-            } else{
-                print("unexpected error");
-            }
+        if(self.postContext.text == ""){
             
-        });
-        
+            let alert = UIAlertController(title: "Error", message: "There's no joke.", preferredStyle: .alert);
+            let OK = UIAlertAction(title: "OK", style: .cancel, handler: nil);
+                alert.addAction(OK);
+                self.present(alert, animated: true, completion: nil);
+            
+        }else{
+            let postref = Database.database().reference().child("posts").childByAutoId();
+                  
+                   let postObject =
+                   [
+                       "text" : postContext.text!,
+                       "persoon" : "\(self.currentUserNaam)",
+                        "likes" : "\(0)",
+                        "dislikes" : "\(0)"
+                       ] as [String : Any];
+                   
+                   postref.setValue(postObject, withCompletionBlock: {
+                       (error, result) in
+                       if error == nil {
+                           self.dismiss(animated: true, completion: nil)
+                       } else{
+                           print("unexpected error");
+                       }
+                       
+                   });
+                   
+        }
+      
     }
     
     

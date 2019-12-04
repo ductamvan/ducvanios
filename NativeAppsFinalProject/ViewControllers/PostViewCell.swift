@@ -17,4 +17,8 @@ class PostViewCell: UITableViewCell {
     @IBOutlet weak var dislikeButton: UIButton!
     @IBOutlet weak var numberOfLikes: UILabel!
     @IBOutlet weak var numberOfDislikes: UILabel!
+    @IBOutlet weak var likeView: UIView!
+    @IBOutlet weak var dislikeView: UIView!
+    
+    
 }

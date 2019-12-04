@@ -39,6 +39,8 @@ class WelcomViewController: UIViewController {
                     
                     self.Naam.text = "\(dict["name"] as! String + ".")" ;
                     
+                    
+                
                 }
                 
                 

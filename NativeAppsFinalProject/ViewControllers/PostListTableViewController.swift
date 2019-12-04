@@ -27,12 +27,15 @@ class PostListTableViewController: UITableViewController{
     
     @IBOutlet weak var postButton: UIButton!
     
+  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.postButton.layer.cornerRadius = 15;
         self.PostTableView.delegate = self;
         self.PostTableView.dataSource = self;
+        
         
 
     }
@@ -49,8 +52,12 @@ class PostListTableViewController: UITableViewController{
             if let actualpost  = post {
                 let tekst : String = actualpost.value(forKey: "text") as! String;
                 let pers : String = actualpost.value(forKey: "persoon") as! String;
+                
+                //Test code
+                let like =  3;
+                let dislike = 1;
               
-                self.posts.append(Post(text: tekst,persoon: pers));
+                self.posts.append(Post(text: tekst,persoon: pers,likes: like,dislikes: dislike));
                 self.posts.reverse();
                 self.tableView.reloadData();
             }
@@ -71,8 +78,12 @@ class PostListTableViewController: UITableViewController{
         if let actualpost  = post {
         let tekst : String = actualpost.value(forKey: "text") as! String;
         let pers : String = actualpost.value(forKey: "persoon") as! String;
-                     
-        self.posts.append(Post(text: tekst,persoon: pers));
+            
+         //test code
+        let like =  0
+            let dislike = 0;
+                                 
+        self.posts.append(Post(text: tekst,persoon: pers,likes: like ,dislikes: dislike));
         self.posts.reverse();
         self.tableView.reloadData();
        
@@ -108,10 +119,15 @@ class PostListTableViewController: UITableViewController{
         
         cell.PostContext.text = postie.Text;
         cell.PersonNameImage.text = postie.Persoon;
+        cell.numberOfLikes.text = "\(postie.Likes)";
+        cell.numberOfDislikes.text = "\(postie.Dislikes)";
         
         
-        cell.layer.borderWidth = 1.0
-        cell.layer.borderColor = UIColor.gray.cgColor;
+        cell.likeView.layer.borderColor = UIColor.black.cgColor;
+        cell.likeView.layer.borderWidth = 1.4;
+        cell.dislikeView.layer.borderColor = UIColor.black.cgColor;
+        cell.dislikeView.layer.borderWidth = 1.4;
+        
         
         
         

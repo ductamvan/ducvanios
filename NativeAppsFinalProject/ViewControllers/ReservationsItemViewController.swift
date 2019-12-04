@@ -17,6 +17,7 @@ class ReservationsItemViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var currentUserNaam: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.makeReservationButton.layer.cornerRadius = 10;

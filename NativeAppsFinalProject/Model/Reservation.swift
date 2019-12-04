@@ -9,11 +9,11 @@
 import Foundation
 struct Reservation {
     var Activity : String;
-    var Day : Date;
-    var StartHour : Date;
-    var EndHour : Date;
+    var Day : String;
+    var StartHour : String;
+    var EndHour : String;
     
-    init(activity : String, day: Date, starthour : Date, endhour : Date){
+    init(activity : String, day: String, starthour : String, endhour : String){
         self.Activity = activity;
         self.StartHour = starthour;
         self.EndHour = endhour;

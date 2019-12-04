@@ -7,64 +7,78 @@
 //
 
 import UIKit
+import Firebase
+
 
 class MyReservationsListTableViewController: UITableViewController {
-    var Reservations = [Reservation]();
-    var CurrentReservations = [Reservation]();
+    var Reservations : [Reservation] = [];
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        createReservations()
-        CurrentReservations = Reservations;
-        
+        createReservations();
+        print("view appeared");
+    
 
     }
     
+    
+    
+    
+   
+    
     func createReservations(){
-        let r1 = Reservation(activity: "Bierpong", day: Date(), starthour: Date(), endhour: Date())
-        let r2 = Reservation(activity: "Bierpong", day: Date(), starthour: Date(), endhour: Date())
-        let r3 = Reservation(activity: "Bierpong", day: Date(), starthour: Date(), endhour: Date())
-        let r4 = Reservation(activity: "Bierpong", day: Date(), starthour: Date(), endhour: Date())
-        let r5 = Reservation(activity: "Bierpong", day: Date(), starthour: Date(), endhour: Date())
+       
+        let uid = Auth.auth().currentUser?.uid;
+        let dbref = Database.database().reference(fromURL: "https://nativeappsiiproject.firebaseio.com/").child("users").child(uid!).child("reservations");
+      
         
-        self.Reservations.append(r1);
-        self.Reservations.append(r2);
-        self.Reservations.append(r3);
-        self.Reservations.append(r4);
-        self.Reservations.append(r5);
+        //loop van alle reservations in DB
+        dbref.observe(.childAdded, with : {
+            (snapshot) in
+            
+            let res = snapshot.value as? NSDictionary;
+             if let actualpost  = res {
+             let activ : String = actualpost.value(forKey: "activiteit") as! String;
+             let dag : String = actualpost.value(forKey: "dag") as! String;
+             let start : String = actualpost.value(forKey: "start") as! String;
+             let end : String = actualpost.value(forKey: "stop") as! String;
+             
+            self.Reservations.append(Reservation(activity: activ, day: dag, starthour: start, endhour: end));
+                
+            }
+        }
+            
+        );
         
         
-    }
+       
+
+}
 
     // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CurrentReservations.count;
+        return Reservations.count;
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let reservie = CurrentReservations[indexPath.row];
+        let reservie = Reservations[indexPath.row];
     
         let cell =  tableView.dequeueReusableCell(withIdentifier: "reservationcell", for: indexPath) as! ReservationViewCell
         
-        let dateFormatterPrint = DateFormatter();
-        dateFormatterPrint.dateFormat = "MMM dd yyyy"
-        let timeFormatterPrint = DateFormatter();
-        timeFormatterPrint.dateFormat = "HH:mm";
-        
-
-        cell.Activity.text = reservie.Activity;
-        cell.Day.text = "\(dateFormatterPrint.string(from: reservie.Day))";
-        cell.startHour.text = "\(timeFormatterPrint.string(from: reservie.Day))";
-        cell.endHour.text = "\(timeFormatterPrint.string(from: reservie.Day))";
+     
+        cell.Activity.text = "\(reservie.Activity)";
+        cell.Day.text = "\(reservie.Day)";
+        cell.startHour.text = "\(reservie.StartHour)";
+        cell.endHour.text = "\(reservie.EndHour)";
         
         
         
         cell.selectionStyle = .none;
-        
         return cell
     }
     
