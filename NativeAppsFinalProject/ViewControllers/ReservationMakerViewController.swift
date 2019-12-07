@@ -11,7 +11,7 @@ import Firebase
 
 
 class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    var Activities = ["Bierpong","Wie Is Het?"];
+    var Activities = ["Bierpong","Wie Is Het?", "Pietjesbak", "Trivial P.", "Kaartspel"];
     var CurrentActivity : String = "";
    
     @IBOutlet weak var ActivityPicker: UIPickerView!
@@ -36,6 +36,10 @@ class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UI
         self.ActivityPicker.delegate = self;
         self.ActivityPicker.dataSource = self;
         
+        self.dayPicker.minimumDate = Date();
+        
+       
+        
 
         
         
@@ -55,55 +59,60 @@ class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UI
     
     
     @IBAction func confirmButtonPressed(_ sender: Any) {
-        if(CurrentActivity == ""){
-            print("Select all Values");
-            let alert = UIAlertController(title: "Error", message: "Fill in all choices", preferredStyle: .alert);
-            let OK = UIAlertAction(title: "OK", style: .cancel, handler: nil);
-            alert.addAction(OK);
-            self.present(alert, animated: true, completion: nil);
-             
-        }
-        else{
-            
-            guard let uid = Auth.auth().currentUser?.uid else{return};
-            
-            let dagformatter = DateFormatter();
-            dagformatter.dateFormat = "dd/MM/yyyy"
-            let dag = dagformatter.string(from: dayPicker.date)
-            let timeformatter = DateFormatter();
-            timeformatter.dateFormat = "HH:mm:ss"
-            let starttijd = timeformatter.string(from: startHourPicker.date);
-            let stoptijd = timeformatter.string(from: endHourPicker.date);
-            
-            
-
-            let ref = Database.database().reference(fromURL: "https://nativeappsiiproject.firebaseio.com/");
-            let userref = ref.child("users").child(uid).child("reservations").childByAutoId();
-            let values = ["activiteit" : self.CurrentActivity , "dag" : dag , "start" : starttijd, "stop" : stoptijd]
-                as [String : Any];
-            
-            
-            
-            userref.updateChildValues(values, withCompletionBlock: {
-                (error, ref) in
-                if error != nil {
-                    print(error!.localizedDescription);
-                    return;
-                }
+           if(CurrentActivity == ""){
+               print("Click on at least 1 activity");
+               let alert = UIAlertController(title: "Error", message: "Click on at least 1 activity", preferredStyle: .alert);
+               let OK = UIAlertAction(title: "OK", style: .cancel, handler: nil);
+               alert.addAction(OK);
+               self.present(alert, animated: true, completion: nil);
                 
-                print("reservation made");
-                let alert = UIAlertController(title: "Confirmed", message: "Reservation made", preferredStyle: .alert);
-                let OK = UIAlertAction(title: "OK", style: .cancel, handler: nil);
-                alert.addAction(OK);
-                self.present(alert, animated: true, completion: nil);
-                
-                
+           }
+           else{
                
-                    }
-        
-            ) }
-    }
-    
+               guard let uid = Auth.auth().currentUser?.uid else{return};
+               
+               let dagformatter = DateFormatter();
+               dagformatter.dateFormat = "dd/MM/yyyy"
+               let dag = dagformatter.string(from: dayPicker.date)
+               let timeformatter = DateFormatter();
+               timeformatter.dateFormat = "HH:mm:ss"
+               let starttijd = timeformatter.string(from: startHourPicker.date);
+               let stoptijd = timeformatter.string(from: endHourPicker.date);
+               
+               
+
+               let ref = Database.database().reference(fromURL: "https://nativeappsiiproject.firebaseio.com/");
+               let userref = ref.child("users").child(uid).child("reservations").childByAutoId();
+               let values = ["activiteit" : self.CurrentActivity , "dag" : dag , "start" : starttijd, "stop" : stoptijd]
+                   as [String : Any];
+            
+              
+               
+            
+         
+            
+               userref.updateChildValues(values, withCompletionBlock: {
+                   (error, ref) in
+                   if error != nil {
+                       print(error!.localizedDescription);
+                       return;
+                   }
+             
+                   
+                   print("reservation made");
+                   let alert = UIAlertController(title: "Confirmed", message: "Reservation made", preferredStyle: .alert);
+                   let OK = UIAlertAction(title: "OK", style: .cancel, handler: nil);
+                   alert.addAction(OK);
+                   self.present(alert, animated: true, completion: nil);
+                   
+                   
+                  
+                       }
+           
+               ) }
+       }
+       
+       
     
     
      func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

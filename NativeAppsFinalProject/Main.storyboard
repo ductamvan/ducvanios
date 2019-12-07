@@ -288,11 +288,12 @@
                     <connections>
                         <outlet property="Naam" destination="ulz-Eg-jXq" id="MWP-I8-clA"/>
                         <outlet property="WelcomsLabel" destination="HGC-Re-9Ap" id="cYS-qr-63v"/>
+                        <segue destination="fDp-kX-h9F" kind="presentation" identifier="postmaker" id="bOA-NG-Fvm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kXw-uL-E8o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2813.04347826087" y="132.58928571428572"/>
+            <point key="canvasLocation" x="2681" y="328"/>
         </scene>
         <!--Post Maker View Controller-->
         <scene sceneID="89d-h6-J4i">
@@ -1341,6 +1342,7 @@
         <image name="trash.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wu8-bt-Jz9"/>
+        <segue reference="bOA-NG-Fvm"/>
+        <segue reference="6HO-4S-mcB"/>
     </inferredMetricsTieBreakers>
 </document>

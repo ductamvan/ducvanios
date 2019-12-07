@@ -17,7 +17,7 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var postContext: UITextView!
     
-    var currentUserNaam : String = "";
+    
     
     
     
@@ -25,7 +25,7 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         postContext.layer.borderWidth = 1
         postContext.layer.borderColor = UIColor.white.cgColor;
-        print(currentUserNaam as String);
+        
         
         
         
@@ -62,25 +62,67 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
                 self.present(alert, animated: true, completion: nil);
             
         }else{
-            let postref = Database.database().reference().child("posts").childByAutoId();
+           let uid = Auth.auth().currentUser?.uid;
+          //  let postref = Database.database().reference().child("users").child(uid!).child("posts").childByAutoId();
+          //  let posts =  Database.database().reference().child("posts").childByAutoId();
+            let userref = Database.database().reference().child("users").child(uid!);
+             
+            
+            
+            
+            userref.observeSingleEvent(of: .value, with: { snapshot in
+                let uid = Auth.auth().currentUser?.uid;
+                let postref = Database.database().reference().child("users").child(uid!).child("posts").childByAutoId();
+                let posts =  Database.database().reference().child("posts").childByAutoId();
+               
+                
+                var CurrentUser : String = "";
+                let dict = snapshot.value as? [String : Any];
+                let naam = dict!["name"] as! String;
+                CurrentUser = naam;
+                print(CurrentUser);
+                 
+
+                let postObject =
+                [
+                    "text" : self.postContext.text!,
+                    "persoon" : CurrentUser,
+                    "likes" : "\(0)",
+                     "dislikes" : "\(0)"
+                    ] as [String : Any];
+                
+               postref.setValue(postObject, withCompletionBlock: {
+                                    (error, result) in
+                                    if error == nil {
+                                        self.dismiss(animated: true, completion: nil)
+                                    } else{
+                                        print("unexpected error");
+                                    }
+                                    
+                                });
+                
+
+                posts.setValue(postObject, withCompletionBlock: {
+                    (error, result) in
+                    if error == nil {
+                        self.dismiss(animated: true, completion: nil)
+                    } else{
+                        print("unexpected error");
+                    }
+                    
+                });
+                         
+
+            })
+            
+            
+            
+            
+          
+            
+        
+            
                   
-                   let postObject =
-                   [
-                       "text" : postContext.text!,
-                       "persoon" : "\(self.currentUserNaam)",
-                        "likes" : "\(0)",
-                        "dislikes" : "\(0)"
-                       ] as [String : Any];
-                   
-                   postref.setValue(postObject, withCompletionBlock: {
-                       (error, result) in
-                       if error == nil {
-                           self.dismiss(animated: true, completion: nil)
-                       } else{
-                           print("unexpected error");
-                       }
-                       
-                   });
                    
         }
       

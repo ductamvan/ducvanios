@@ -19,6 +19,11 @@ class WelcomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsLoggedIn();
+        
+               
+       
+        
+        
 
     }
     
@@ -49,4 +54,13 @@ class WelcomViewController: UIViewController {
         }
     }
     
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
+       
+        let VC = segue.destination as! PostMakerViewController;
+        VC.CurrentUser = self.Naam.text!;
+        
+        }
+        
+    }*/
+
 }

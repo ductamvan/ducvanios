@@ -46,6 +46,8 @@ class MyReservationsListTableViewController: UITableViewController {
              let end : String = actualpost.value(forKey: "stop") as! String;
              
             self.Reservations.append(Reservation(activity: activ, day: dag, starthour: start, endhour: end));
+            //filter de geweeste dagen
+    
             self.tableView.reloadData();
             }
         }

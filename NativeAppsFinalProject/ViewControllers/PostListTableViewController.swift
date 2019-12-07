@@ -54,8 +54,8 @@ class PostListTableViewController: UITableViewController{
                 let pers : String = actualpost.value(forKey: "persoon") as! String;
                 
                 //Test code
-                let like =  3;
-                let dislike = 1;
+                let like =  actualpost.value(forKey: "likes") as! String;
+                let dislike = actualpost.value(forKey: "dislikes") as! String;
               
                 self.posts.append(Post(text: tekst,persoon: pers,likes: like,dislikes: dislike));
                 self.posts.reverse();
@@ -80,8 +80,8 @@ class PostListTableViewController: UITableViewController{
         let pers : String = actualpost.value(forKey: "persoon") as! String;
             
          //test code
-        let like =  0
-            let dislike = 0;
+            let like =  actualpost.value(forKey: "likes") as! String;
+            let dislike = actualpost.value(forKey: "dislikes") as! String;
                                  
         self.posts.append(Post(text: tekst,persoon: pers,likes: like ,dislikes: dislike));
         self.posts.reverse();
