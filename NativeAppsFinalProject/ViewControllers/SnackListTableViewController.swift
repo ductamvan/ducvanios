@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
     
     var Snacks = [Snack] ();
     var CurrentSnacks = [Snack] ();
+    let Data = DataFetchDiscovery();
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -20,67 +22,16 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Snacks = createSnacks();
+        self.Snacks = createSnacks();
         CurrentSnacks = Snacks;
         self.navigationController?.isNavigationBarHidden = false;
         
  
     }
     
-    func createSnacks() -> [Snack]{
-       
-        let snack1 = Snack(image: UIImage(named: "paprika")!
-                    , naam: "Lays Paprika"
-            , prijs: 1.00
-                    , beschrijving: """
-                    De enige echte Lay's chips met paprikasmaak
-                    Zonder kunstmatige kleurstoffen
-                    Bevat 7-8 porties
-                    """,
-                      categorie: "chips");
-        let snack2 = Snack(image: UIImage(named: "ketchup")!
-                   , naam: "Lay's Su­per­chips Ketchup"
-            , prijs: 1.20
-                   , beschrijving: """
-                   Lay's Superchips, extra crunchy gebakken met de heerlijke smaak van Heinz Tomato Ketchup.
-                   """
-                    , categorie: "chips");
-        let snack3 = Snack(image: UIImage(named: "grills")!
-                   , naam: "Grills"
-                   , prijs: 1.00
-                   , beschrijving: """
-                    Grills is gemaakt van de lekkerste maïs en de beste aardappelen. Met een heerlijk gerookte bacon smaak
-                   """,
-                     categorie: "chips");
-        let snack4 = Snack(image: UIImage(named: "worst")!
-                   , naam: "Droge Worst"
-                   , prijs: 1.5
-                   , beschrijving: """
-                   Lekker pittige Spaanse chorizo. Gedroogd in de traditionele vorm. Ideaal als snack of combinatie met andere gerechten.
-                   """
-                    ,categorie: "worst" );
-        let snack5 = Snack(image: UIImage(named: "pickles")!
-                   , naam: "Lays Pickles"
-                   , prijs: 1.20
-                   , beschrijving: """
-                   De enige echte Lay's chips met de unieke en onovertroffen smaak van pickles.
-                    bevat 7-8 porties
-                   """
-                    ,categorie: "chips");
-        let snack6 = Snack(image: UIImage(named: "bifi")!
-                          , naam: "Bifi Duo"
-                          , prijs: 0.80
-                          , beschrijving: """
-                          2 heerlijke salami worstjes gemaakt van hoogwaardig kwaliteitsvlees.
-                          """,  categorie: "worst" );
-        var snacken = [Snack] ();
-        snacken.append(snack1);
-        snacken.append(snack2);
-        snacken.append(snack3);
-        snacken.append(snack4);
-        snacken.append(snack5);
-        snacken.append(snack6);
-        return snacken;
+    func createSnacks()-> [Snack]{
+        let snackies = Data.createSnacks();
+        return snackies;
         
         
     }
@@ -90,6 +41,7 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
     
     @available(iOS 3.0, *)
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
+        
         switch selectedScope{
                case 0 : CurrentSnacks = createSnacks();
                    tableView.reloadData();

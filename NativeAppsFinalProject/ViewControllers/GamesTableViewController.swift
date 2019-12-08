@@ -11,6 +11,8 @@ import UIKit
 class GamesTableViewController: UITableViewController, UISearchBarDelegate{
     var Games = [Game] ();
     var CurrentGames = [Game] ();
+    let Data = DataFetchDiscovery();
+    
     
     
     override func viewDidLoad() {
@@ -23,19 +25,8 @@ class GamesTableViewController: UITableViewController, UISearchBarDelegate{
     }
     
     func createElements() -> [Game] {
-        let game1 = Game(image: UIImage(named: "bierpongtafel")!, naam: "Bierpong", price: 10.0, description: "Bierpong spel, 2 tegen 2 met elk 10 bekers gevuld met bier.", categorie: "drinking");
-        
-        let game2 = Game(image: UIImage(named: "wieishet")!, naam: "Wie is het?", price: 4.50
-            , description: """
-            Dit is het originele Wie is het? raadspel! Wie is het?
-            Elke speler kiest een geheime figuur en probeert dan met behulp van ja- en nee-vragen uit te vinden wie de geheime figuur van de tegenstander is.
-            """
-            , categorie: "board");
-        
-        var games = [Game] ();
-        games.append(game1);
-        games.append(game2);
-        return games;
+        let gamies = Data.createGames();
+        return gamies;
         
       
     }

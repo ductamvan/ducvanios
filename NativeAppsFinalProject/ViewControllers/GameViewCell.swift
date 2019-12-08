@@ -15,8 +15,10 @@ class GameViewCell: UITableViewCell {
     @IBOutlet weak var GamePrice: UILabel!
     @IBOutlet weak var GameDescription: UILabel!
     
+    @IBOutlet weak var makeReservationButton: UIButton!
     
    
    
+    
     
 }

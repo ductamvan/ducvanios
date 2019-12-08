@@ -11,7 +11,7 @@ import Firebase
 
 
 class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    var Activities = ["Bierpong","Wie Is Het?", "Pietjesbak", "Trivial P.", "Kaartspel"];
+    var Activities = ["Bierpong","Wie Is Het?", "Pietjesbak", "Trivial P.", "Uno"];
     var CurrentActivity : String = "";
    
     @IBOutlet weak var ActivityPicker: UIPickerView!
@@ -94,22 +94,24 @@ class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UI
                userref.updateChildValues(values, withCompletionBlock: {
                    (error, ref) in
                    if error != nil {
-                       print(error!.localizedDescription);
+                    print(error!.localizedDescription);
+                    
+                    let alert = UIAlertController(title: "Error", message: "Error while creating Reservation", preferredStyle: .alert);
+                    let OK = UIAlertAction(title: "OK", style: .cancel, handler: nil);
+                    alert.addAction(OK);
+                    self.present(alert, animated: true, completion: nil);
                        return;
-                   }
+                     
+                   }else{
+                     self.dismiss(animated: true, completion: nil);
+                }
              
-                   
-                   print("reservation made");
-                   let alert = UIAlertController(title: "Confirmed", message: "Reservation made", preferredStyle: .alert);
-                   let OK = UIAlertAction(title: "OK", style: .cancel, handler: nil);
-                   alert.addAction(OK);
-                   self.present(alert, animated: true, completion: nil);
-                   
-                   
-                  
-                       }
+            
+               }
+                
            
                ) }
+
        }
        
        
@@ -120,7 +122,6 @@ class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     
-    
- 
+
 }
 

@@ -12,6 +12,7 @@ class DrinksTableViewController: UITableViewController, UISearchBarDelegate{
     
     var Drinks = [Drink] ();
     var CurrentDrinks =  [Drink] ();
+    let Data = DataFetchDiscovery();
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -23,38 +24,9 @@ class DrinksTableViewController: UITableViewController, UISearchBarDelegate{
     }
     
     func createDrinks () -> [Drink] {
-        let drink1 = Drink(image: UIImage(named: "bockor")!, naam: "Bockor Pils", prijs: 1.40, beschrijving: """
-            Bockor pils heeft een mooie, smeuïge schuimkraag wanneer het bier vakkundig geschonken wordt in een zuiver, goed ontvet glas. De geur heeft een frisse hoptoets en een mooie ingehouden bitterheid.
-            """
-            , categorie: "bier"
-            , alcoholperc: 5.2);
+        let drinkies = Data.createDrinks();
+        return drinkies;
         
-        let drink2 = Drink(image: UIImage(named: "omer")!, naam: "Omer Traditional Beer", prijs: 2.00, beschrijving: """
-                    OMER. dankt zijn fijn, fruitig aroma en subtiele bitterheid aan de zorgvuldig geselecteerde grondstoffen zoals de beste gerstemout uit de Loirestreek.
-                   """
-                   , categorie: "bier"
-            , alcoholperc: 8.00);
-        
-        let drink3 = Drink(image: UIImage(named: "cola")!, naam: "Cola", prijs: 1.20, beschrijving: """
-                          Coca-Cola is de meest favoriete frisdrank van de wereld. De 0,5L PET is de ideale verpakking voor onderweg.
-                          """
-                          , categorie: "soda"
-            , alcoholperc: 0.00);
-        
-        let drink4 = Drink(image: UIImage(named: "wittewijn")!, naam: "Witte Wijn", prijs: 2.00, beschrijving: """
-                           Dit is een heerlijke, frisse wijn om mee te borrelen. Hij heeft de fruitige smaak van peer en meloen. Gemaakt van biologisch verbouwde druiven.
-                          """
-                          , categorie: "wijn"
-            , alcoholperc: 12.2);
-        
-    
-        
-        var drinken = [Drink]();
-        drinken.append(drink1);
-        drinken.append(drink2);
-        drinken.append(drink3);
-        drinken.append(drink4);
-        return drinken;
     }
     
     @available(iOS 3.0, *)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1904A4EB239D1541001080F0 /* DataFetchDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904A4EA239D1541001080F0 /* DataFetchDiscovery.swift */; };
 		191CC40B23705BF4003AA481 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC40A23705BF4003AA481 /* AppDelegate.swift */; };
 		191CC40D23705BF4003AA481 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC40C23705BF4003AA481 /* SceneDelegate.swift */; };
 		191CC40F23705BF4003AA481 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC40E23705BF4003AA481 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		1825B4541D9EE327FEEDAFF0 /* Pods-NativeAppsFinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeAppsFinalProject.release.xcconfig"; path = "Target Support Files/Pods-NativeAppsFinalProject/Pods-NativeAppsFinalProject.release.xcconfig"; sourceTree = "<group>"; };
+		1904A4EA239D1541001080F0 /* DataFetchDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchDiscovery.swift; sourceTree = "<group>"; };
 		191CC40723705BF4003AA481 /* NativeAppsFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeAppsFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		191CC40A23705BF4003AA481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		191CC40C23705BF4003AA481 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1904A4E9239D150F001080F0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1904A4EA239D1541001080F0 /* DataFetchDiscovery.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		191CC3FE23705BF4003AA481 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 				191CC43023731C41003AA481 /* Main.storyboard */,
 				191CC43C2375AFB4003AA481 /* Model */,
 				191CC42923706712003AA481 /* ViewControllers */,
+				1904A4E9239D150F001080F0 /* Data */,
 				191CC41323705BFA003AA481 /* Assets.xcassets */,
 				191CC42A23708550003AA481 /* GoogleService-Info.plist */,
 				191CC41523705BFA003AA481 /* LaunchScreen.storyboard */,
@@ -297,6 +308,7 @@
 			files = (
 				191CC4402375B0EA003AA481 /* PostListTableViewController.swift in Sources */,
 				19DAA9C3237751E000E4B314 /* SnackListTableViewController.swift in Sources */,
+				1904A4EB239D1541001080F0 /* DataFetchDiscovery.swift in Sources */,
 				19D34900238C5281009839E2 /* MyReservationsListTableViewController.swift in Sources */,
 				191CC42423706666003AA481 /* LoginViewController.swift in Sources */,
 				1945D53C237C5C67005CF923 /* GameViewCell.swift in Sources */,

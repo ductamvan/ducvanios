@@ -941,7 +941,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" showsScopeBar="YES" id="kvP-FR-EN0">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
@@ -1028,7 +1028,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search" showsScopeBar="YES" id="Ugb-of-28H">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
@@ -1138,7 +1138,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="Search" showsScopeBar="YES" id="bq4-gy-R1n">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
@@ -1225,8 +1225,7 @@
                                             <rect key="frame" x="260" y="189" width="134" height="30"/>
                                             <state key="normal" title="Make Reservation"/>
                                             <connections>
-                                                <action selector="makeReservationButtonClicked:" destination="Ve8-a7-13a" eventType="touchUpInside" id="QUo-zJ-TlT"/>
-                                                <action selector="makeReservationButtonPressed:" destination="Ve8-a7-13a" eventType="touchUpInside" id="tOT-Z6-VAu"/>
+                                                <segue destination="s7c-M0-s30" kind="presentation" id="aNL-tc-4li"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/Hour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sr-Kq-ySG">
@@ -1423,6 +1422,7 @@
                                     <outlet property="GameImage" destination="PAS-7L-kRm" id="YSd-56-H6j"/>
                                     <outlet property="GameName" destination="PEu-IT-7K0" id="aBT-N6-l1U"/>
                                     <outlet property="GamePrice" destination="EEl-gM-JOl" id="drv-L6-hir"/>
+                                    <outlet property="makeReservationButton" destination="vJJ-5J-z1L" id="K0x-3W-pbo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1798,7 +1798,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oem-BD-15Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7000.0000000000009" y="1968.75"/>
+            <point key="canvasLocation" x="6958" y="2295"/>
         </scene>
         <!--Reservation Maker View Controller-->
         <scene sceneID="kmL-tT-bfi">
@@ -1986,7 +1986,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKn-EP-9vy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6878.2608695652179" y="982.36607142857133"/>
+            <point key="canvasLocation" x="6958" y="1428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CHS-WW-sF1">
@@ -2065,7 +2065,8 @@
         <image name="trash.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bOA-NG-Fvm"/>
+        <segue reference="aNL-tc-4li"/>
+        <segue reference="Cup-mZ-XLq"/>
         <segue reference="wu8-bt-Jz9"/>
     </inferredMetricsTieBreakers>
 </document>
