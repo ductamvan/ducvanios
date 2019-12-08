@@ -78,8 +78,8 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
                 
                 var CurrentUser : String = "";
                 let dict = snapshot.value as? [String : Any];
-                let naam = dict!["name"] as! String;
-                CurrentUser = naam;
+                let naam = (dict!["name"]) as! String;
+                CurrentUser = naam + " " + (dict!["lastname"] as! String);
                 print(CurrentUser);
                  
 
@@ -87,8 +87,7 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
                 [
                     "text" : self.postContext.text!,
                     "persoon" : CurrentUser,
-                    "likes" : "\(0)",
-                     "dislikes" : "\(0)"
+                    
                    
                     ] as [String : Any];
                 

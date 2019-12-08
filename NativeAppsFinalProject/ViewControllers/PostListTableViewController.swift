@@ -53,11 +53,10 @@ class PostListTableViewController: UITableViewController{
                 let tekst : String = actualpost.value(forKey: "text") as! String;
                 let pers : String = actualpost.value(forKey: "persoon") as! String;
                 
-                //Test code
-                let like =  actualpost.value(forKey: "likes") as! String;
-                let dislike = actualpost.value(forKey: "dislikes") as! String;
+               
+                
               
-                self.posts.append(Post(text: tekst,persoon: pers,likes: like,dislikes: dislike));
+                self.posts.append(Post(text: tekst,persoon: pers));
                 self.posts.reverse();
                 self.tableView.reloadData();
             }
@@ -79,11 +78,9 @@ class PostListTableViewController: UITableViewController{
         let tekst : String = actualpost.value(forKey: "text") as! String;
         let pers : String = actualpost.value(forKey: "persoon") as! String;
             
-         //test code
-            let like =  actualpost.value(forKey: "likes") as! String;
-            let dislike = actualpost.value(forKey: "dislikes") as! String;
+         
                                  
-        self.posts.append(Post(text: tekst,persoon: pers,likes: like ,dislikes: dislike));
+        self.posts.append(Post(text: tekst,persoon: pers));
         self.posts.reverse();
         self.tableView.reloadData();
        
@@ -119,8 +116,7 @@ class PostListTableViewController: UITableViewController{
         
         cell.PostContext.text = postie.Text;
         cell.PersonNameImage.text = postie.Persoon;
-        cell.numberOfLikes.text = "\(postie.Likes)";
-        cell.numberOfDislikes.text = "\(postie.Dislikes)";
+        
         
         
         

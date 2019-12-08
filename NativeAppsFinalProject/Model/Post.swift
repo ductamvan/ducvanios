@@ -13,15 +13,13 @@ import Firebase
 public struct Post :Codable {
     var Persoon : String = "";
     var Text : String = "";
-    var Likes : String;
-    var Dislikes : String;
+   
     
     
-    init(text : String, persoon : String, likes : String, dislikes : String) {
+    init(text : String, persoon : String) {
         self.Text = text;
         self.Persoon = persoon;
-        self.Dislikes = dislikes;
-        self.Likes = likes;
+       
         
         
     }
