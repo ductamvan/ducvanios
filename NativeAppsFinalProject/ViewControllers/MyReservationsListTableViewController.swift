@@ -10,8 +10,22 @@ import UIKit
 import Firebase
 
 
+
+extension String {
+    /// Returns a date from a string in MMMM dd, yyyy. Will return today's date if input is invalid.
+    var asDate: Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter.date(from: self) ?? Date()
+    }
+}
+
+
+
 class MyReservationsListTableViewController: UITableViewController {
     var Reservations : [Reservation] = [];
+    
+    
     
 
     override func viewDidLoad() {
@@ -47,17 +61,31 @@ class MyReservationsListTableViewController: UITableViewController {
              
             self.Reservations.append(Reservation(activity: activ, day: dag, starthour: start, endhour: end));
             //filter de geweeste dagen
-    
+                
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.timeStyle = DateFormatter.Style.none;
+                dateFormatter.dateStyle = DateFormatter.Style.medium;
+                let current = Date().addingTimeInterval(100);
+                self.Reservations = self.Reservations.filter({$0.Day.asDate.compare(current) == .orderedAscending});
+                
+                    
+                }
+            print(self.Reservations);
             self.tableView.reloadData();
             }
-        }
+        )
+        
+    }
             
-        );
         
         
        
+       
 
-}
+
+    
+   
 
     // MARK: - Table view data source
 

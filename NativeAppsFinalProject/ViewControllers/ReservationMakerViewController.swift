@@ -59,6 +59,10 @@ class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UI
     
     
     @IBAction func confirmButtonPressed(_ sender: Any) {
+        
+        
+        
+        
            if(CurrentActivity == ""){
                print("Click on at least 1 activity");
                let alert = UIAlertController(title: "Error", message: "Click on at least 1 activity", preferredStyle: .alert);
@@ -67,6 +71,9 @@ class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UI
                self.present(alert, animated: true, completion: nil);
                 
            }
+            
+           
+            
            else{
                
                guard let uid = Auth.auth().currentUser?.uid else{return};
@@ -75,7 +82,7 @@ class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UI
                dagformatter.dateFormat = "dd/MM/yyyy"
                let dag = dagformatter.string(from: dayPicker.date)
                let timeformatter = DateFormatter();
-               timeformatter.dateFormat = "HH:mm:ss"
+               timeformatter.dateFormat = "HH:mm"
                let starttijd = timeformatter.string(from: startHourPicker.date);
                let stoptijd = timeformatter.string(from: endHourPicker.date);
                
