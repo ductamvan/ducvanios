@@ -16,9 +16,9 @@ class DiscoveryItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.SnackButton.imageView?.layer.cornerRadius = 30;
-        self.DrinksButton.imageView?.layer.cornerRadius = 30;
-        self.GamesButton.imageView?.layer.cornerRadius = 30;
+        self.SnackButton.layer.cornerRadius = 20;
+        self.DrinksButton.layer.cornerRadius = 20;
+        self.GamesButton.layer.cornerRadius = 20;
         
         
         // Do any additional setup after loading the view.

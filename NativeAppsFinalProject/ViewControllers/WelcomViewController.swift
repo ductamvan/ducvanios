@@ -15,10 +15,12 @@ class WelcomViewController: UIViewController {
     
     @IBOutlet weak var WelcomsLabel: UILabel!
     @IBOutlet weak var Naam: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsLoggedIn();
+        self.continueButton.layer.cornerRadius = 15;
         
                
        

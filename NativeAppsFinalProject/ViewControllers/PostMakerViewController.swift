@@ -89,6 +89,7 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
                     "persoon" : CurrentUser,
                     "likes" : "\(0)",
                      "dislikes" : "\(0)"
+                   
                     ] as [String : Any];
                 
                postref.setValue(postObject, withCompletionBlock: {

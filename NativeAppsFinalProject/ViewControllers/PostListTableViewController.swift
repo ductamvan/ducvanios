@@ -123,10 +123,6 @@ class PostListTableViewController: UITableViewController{
         cell.numberOfDislikes.text = "\(postie.Dislikes)";
         
         
-        cell.likeView.layer.borderColor = UIColor.black.cgColor;
-        cell.likeView.layer.borderWidth = 1.4;
-        cell.dislikeView.layer.borderColor = UIColor.black.cgColor;
-        cell.dislikeView.layer.borderWidth = 1.4;
         
         
         

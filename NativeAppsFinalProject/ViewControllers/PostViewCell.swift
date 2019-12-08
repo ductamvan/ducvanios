@@ -20,5 +20,18 @@ class PostViewCell: UITableViewCell {
     @IBOutlet weak var likeView: UIView!
     @IBOutlet weak var dislikeView: UIView!
     
+    var postID : String = "";
+    
+    @IBAction func likeButtonPressed(_ sender: Any) {
+        self.likeButton.isEnabled = false;
+        self.dislikeButton.isEnabled = true;
+    }
+    
+    
+    @IBAction func dislikeButtonPressed(_ sender: Any) {
+        self.likeButton.isEnabled = true;
+        self.dislikeButton.isEnabled = false;
+    }
+    
     
 }
