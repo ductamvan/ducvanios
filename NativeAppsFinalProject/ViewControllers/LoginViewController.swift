@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
             (result,error) in
             //error logging in as a user
             if(error != nil){
-                self.ErrorDetectionLabel.text = error?.localizedDescription;
+                self.ErrorDetectionLabel.text = "Credentials are invalid";
                 self.ErrorDetectionLabel.alpha = 1;
                 
                 let alert = UIAlertController(title: "Error", message: "Credentials are invalid", preferredStyle: .alert);

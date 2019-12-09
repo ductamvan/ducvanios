@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1904A4EB239D1541001080F0 /* DataFetchDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904A4EA239D1541001080F0 /* DataFetchDiscovery.swift */; };
+		1904A4ED239E8AE7001080F0 /* Prize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904A4EC239E8AE7001080F0 /* Prize.swift */; };
+		1904A4EF239E8B53001080F0 /* PrizesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904A4EE239E8B53001080F0 /* PrizesTableViewController.swift */; };
+		1904A4F3239E8D0E001080F0 /* PrizeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904A4F2239E8D0E001080F0 /* PrizeViewCell.swift */; };
 		191CC40B23705BF4003AA481 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC40A23705BF4003AA481 /* AppDelegate.swift */; };
 		191CC40D23705BF4003AA481 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC40C23705BF4003AA481 /* SceneDelegate.swift */; };
 		191CC40F23705BF4003AA481 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191CC40E23705BF4003AA481 /* ViewController.swift */; };
@@ -44,6 +47,9 @@
 /* Begin PBXFileReference section */
 		1825B4541D9EE327FEEDAFF0 /* Pods-NativeAppsFinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeAppsFinalProject.release.xcconfig"; path = "Target Support Files/Pods-NativeAppsFinalProject/Pods-NativeAppsFinalProject.release.xcconfig"; sourceTree = "<group>"; };
 		1904A4EA239D1541001080F0 /* DataFetchDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchDiscovery.swift; sourceTree = "<group>"; };
+		1904A4EC239E8AE7001080F0 /* Prize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
+		1904A4EE239E8B53001080F0 /* PrizesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizesTableViewController.swift; sourceTree = "<group>"; };
+		1904A4F2239E8D0E001080F0 /* PrizeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeViewCell.swift; sourceTree = "<group>"; };
 		191CC40723705BF4003AA481 /* NativeAppsFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeAppsFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		191CC40A23705BF4003AA481 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		191CC40C23705BF4003AA481 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 				19AEBB3923898AD3007FEB28 /* ReservationMakerViewController.swift */,
 				19D348FF238C5281009839E2 /* MyReservationsListTableViewController.swift */,
 				19D34901238C52AF009839E2 /* ReservationViewCell.swift */,
+				1904A4EE239E8B53001080F0 /* PrizesTableViewController.swift */,
+				1904A4F2239E8D0E001080F0 /* PrizeViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 				1945D53D237C5F32005CF923 /* Game.swift */,
 				19D34903238C53A6009839E2 /* Reservation.swift */,
 				19D52AF62395554D00B56000 /* currentUser.swift */,
+				1904A4EC239E8AE7001080F0 /* Prize.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +324,7 @@
 				19DAA9C12377507C00E4B314 /* Snack.swift in Sources */,
 				191CC43E2375AFDE003AA481 /* Post.swift in Sources */,
 				191CC43B2375AD34003AA481 /* PostViewCell.swift in Sources */,
+				1904A4F3239E8D0E001080F0 /* PrizeViewCell.swift in Sources */,
 				191CC40F23705BF4003AA481 /* ViewController.swift in Sources */,
 				191CC43923759F92003AA481 /* ReservationsItemViewController.swift in Sources */,
 				191CC40B23705BF4003AA481 /* AppDelegate.swift in Sources */,
@@ -327,9 +337,11 @@
 				1945D53A237C5C54005CF923 /* GamesTableViewController.swift in Sources */,
 				19D34902238C52AF009839E2 /* ReservationViewCell.swift in Sources */,
 				191CC43523759F70003AA481 /* DiscoveryItemViewController.swift in Sources */,
+				1904A4EF239E8B53001080F0 /* PrizesTableViewController.swift in Sources */,
 				1946A3AF237A984B001D5046 /* Drink.swift in Sources */,
 				19AEBB3A23898AD3007FEB28 /* ReservationMakerViewController.swift in Sources */,
 				191CC42823706680003AA481 /* WelcomViewController.swift in Sources */,
+				1904A4ED239E8AE7001080F0 /* Prize.swift in Sources */,
 				19D34904238C53A6009839E2 /* Reservation.swift in Sources */,
 				19270DD8238558C800EF671C /* PostMakerViewController.swift in Sources */,
 				1946A3AB237A981A001D5046 /* DrinkViewCell.swift in Sources */,

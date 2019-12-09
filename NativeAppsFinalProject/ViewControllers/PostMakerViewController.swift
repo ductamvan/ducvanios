@@ -72,7 +72,7 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
             
             userref.observeSingleEvent(of: .value, with: { snapshot in
                 let uid = Auth.auth().currentUser?.uid;
-                let postref = Database.database().reference().child("users").child(uid!).child("posts").childByAutoId();
+                
                 let posts =  Database.database().reference().child("posts").childByAutoId();
                
                 
@@ -87,19 +87,12 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
                 [
                     "text" : self.postContext.text!,
                     "persoon" : CurrentUser,
+                    "uid" : uid!,
                     
                    
                     ] as [String : Any];
                 
-               postref.setValue(postObject, withCompletionBlock: {
-                                    (error, result) in
-                                    if error == nil {
-                                        self.dismiss(animated: true, completion: nil)
-                                    } else{
-                                        print("unexpected error");
-                                    }
-                                    
-                                });
+         
                 
 
                 posts.setValue(postObject, withCompletionBlock: {
