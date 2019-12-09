@@ -16,12 +16,14 @@ class ReservationsItemViewController: UIViewController {
     @IBOutlet weak var myReservationButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var currentUserNaam: UILabel!
+    @IBOutlet weak var myPrizesButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.makeReservationButton.layer.cornerRadius = 10;
         self.myReservationButton.layer.cornerRadius = 10;
+        self.myPrizesButton.layer.cornerRadius = 10;
         self.logOutButton.layer.cornerRadius = 15;
         
     
