@@ -18,6 +18,7 @@ class PrizesTableViewController: UITableViewController {
 
     }
     
+    //prijzen halen
     func createPrizes(){
         let uid = Auth.auth().currentUser?.uid;
                let dbref = Database.database().reference(fromURL: "https://nativeappsiiproject.firebaseio.com/").child("users").child(uid!).child("prizes");

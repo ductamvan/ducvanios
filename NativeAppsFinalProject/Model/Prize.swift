@@ -8,12 +8,12 @@
 
 import Foundation
 import UIKit
-
+//struct prize
 struct Prize {
     var Code : String;
     var ExpireDate : String;
     
-    
+    //constructor
     init(code : String, expdate: String){
         self.Code = code;
         self.ExpireDate = expdate;

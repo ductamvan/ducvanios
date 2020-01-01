@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-
+//extension string
 extension String {
     /// Returns a date from a string in MMMM dd, yyyy. Will return today's date if input is invalid.
     var asDate: Date {
@@ -26,8 +26,6 @@ class MyReservationsListTableViewController: UITableViewController {
     var Reservations : [Reservation] = [];
     
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         createReservations();
@@ -37,11 +35,7 @@ class MyReservationsListTableViewController: UITableViewController {
 
     }
     
-    
-    
-    
-   
-    
+    //reservaties halen
     func createReservations(){
        
         let uid = Auth.auth().currentUser?.uid;

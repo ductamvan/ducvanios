@@ -29,6 +29,7 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
  
     }
     
+    //snacks halen
     func createSnacks()-> [Snack]{
         let snackies = Data.createSnacks();
         return snackies;
@@ -36,9 +37,7 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
         
     }
     
-    
-   
-    
+    //zoekbalk/scope
     @available(iOS 3.0, *)
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
         
@@ -61,7 +60,7 @@ class SnackListTableViewController: UITableViewController, UISearchBarDelegate {
                    return;
                }
     }
-    
+    //zoekbalk zoeken
     @available(iOS 2.0, *)
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         CurrentSnacks = Snacks.filter({ snack -> Bool in

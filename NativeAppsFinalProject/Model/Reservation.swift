@@ -7,12 +7,14 @@
 //
 
 import Foundation
+//struct reservation
 struct Reservation {
     var Activity : String;
     var Day : String;
     var StartHour : String;
     var EndHour : String;
     
+    //constructor
     init(activity : String, day: String, starthour : String, endhour : String){
         self.Activity = activity;
         self.StartHour = starthour;

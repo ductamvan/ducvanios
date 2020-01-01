@@ -26,13 +26,14 @@ class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UI
     
     override func viewDidLoad() {
     super.viewDidLoad();
+        //setup elements
         ActivityPicker.setValue(UIColor.white, forKeyPath: "textColor");
         dayPicker.setValue(UIColor.white, forKeyPath: "textColor")
         startHourPicker.setValue(UIColor.white, forKeyPath: "textColor")
         endHourPicker.setValue(UIColor.white, forKeyPath: "textColor");
         self.confirmButton.layer.cornerRadius = 18;
         
-        //
+        
         self.ActivityPicker.delegate = self;
         self.ActivityPicker.dataSource = self;
         
@@ -58,11 +59,10 @@ class ReservationMakerViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     
-    
+    //confirm button pressed
     @IBAction func confirmButtonPressed(_ sender: Any) {
         
-        
-        
+
         
            if(CurrentActivity == ""){
                print("Click on at least 1 activity");

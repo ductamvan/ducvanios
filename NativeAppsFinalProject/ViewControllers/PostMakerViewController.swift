@@ -32,26 +32,13 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
         
     }
     
-    /*func CurrentPerson()-> String{
-        var person : String = "";
-        let uid = Auth.auth().currentUser!.uid;
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: {
-            snapshot in
-            if let dict = snapshot.value as? [String : AnyObject]{
-                person = dict["naam"] as! String;
-            }
-                
-            
-            });
-        return person;
-        
-    }*/
+  
     
     
     
    
     
-   
+   //post button pressed
     @IBAction func postButtonPressed(_ sender: Any) {
         
         if(self.postContext.text == ""){
@@ -107,21 +94,12 @@ class PostMakerViewController: UIViewController, UITextViewDelegate {
                          
 
             })
-            
-            
-            
-            
-          
-            
         
-            
-                  
-                   
         }
       
     }
     
-    
+    //cancel button pressed
     @IBAction func cancelButtonPressed(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "tabControlVC") as! UITabBarController

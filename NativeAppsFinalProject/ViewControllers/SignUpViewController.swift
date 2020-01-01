@@ -23,6 +23,7 @@ class SignUpViewController: UIViewController {
         setUpElements()
     }
     
+    //vol scherm
     override func viewDidAppear(_ animated: Bool) {
          self.modalPresentationStyle = .fullScreen;
      }
@@ -32,7 +33,8 @@ class SignUpViewController: UIViewController {
         ErrorDetectionLabel.alpha = 0;
         self.navigationController?.setNavigationBarHidden(false, animated: true);
     }
-
+    
+    //kijken of alle velden zijn ingevuld en controleren
     func validateFields() -> String?{
         //check if all the fields are filled in.
         if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
@@ -50,7 +52,7 @@ class SignUpViewController: UIViewController {
         return nil;
     }
 
-    //password validation code <<https://iosdevcenters.blogspot.com/2017/06/password-validation-in-swift-30.html>>
+    //password validation code URL <<https://iosdevcenters.blogspot.com/2017/06/password-validation-in-swift-30.html>>
     //8characters en minstens 1 symbool
     public func isPasswordValid(_ password : String) -> Bool{
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")

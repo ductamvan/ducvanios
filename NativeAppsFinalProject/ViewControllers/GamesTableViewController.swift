@@ -23,14 +23,14 @@ class GamesTableViewController: UITableViewController, UISearchBarDelegate{
 
       
     }
-    
+    //halen games
     func createElements() -> [Game] {
         let gamies = Data.createGames();
         return gamies;
         
       
     }
-    
+    //zoeken scope
     @available(iOS 3.0, *)
           func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
               switch selectedScope{
@@ -53,7 +53,7 @@ class GamesTableViewController: UITableViewController, UISearchBarDelegate{
                          return;
                      }
           }
-          
+          //zoeken text
           @available(iOS 2.0, *)
           func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
               CurrentGames = Games.filter({ game -> Bool in

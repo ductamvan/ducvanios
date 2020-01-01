@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
         
      
     }
+    //vol scherm
     override func viewDidAppear(_ animated: Bool) {
         self.modalPresentationStyle = .fullScreen;
     }
@@ -40,7 +41,7 @@ class LoginViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true);
     }
     
-   
+   //transitie naar welkomscherm
     func transitionToWelcomeScreen(){
         let WelcomeScreenVC = storyboard?.instantiateViewController(identifier: "WelcomeScreenVC") as? WelcomViewController;
         WelcomeScreenVC?.modalTransitionStyle = .flipHorizontal;
@@ -51,7 +52,7 @@ class LoginViewController: UIViewController {
         //view.window?.makeKeyAndVisible();
     }
     
-    
+    //sign out
     @IBAction func signInButtonPressed(_ sender: Any) {
         //password en email cleanen
         let cleanEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines);

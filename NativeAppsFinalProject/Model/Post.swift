@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 import Firebase
 
+//struc post
 public struct Post :Codable {
     var Persoon : String = "";
     var Text : String = "";
    
     
-    
+    //construstor
     init(text : String, persoon : String) {
         self.Text = text;
         self.Persoon = persoon;

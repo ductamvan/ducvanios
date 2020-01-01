@@ -21,6 +21,7 @@ class ReservationsItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //afronden buttons
         self.makeReservationButton.layer.cornerRadius = 10;
         self.myReservationButton.layer.cornerRadius = 10;
         self.myPrizesButton.layer.cornerRadius = 10;
@@ -35,7 +36,7 @@ class ReservationsItemViewController: UIViewController {
         
     }
     
-    
+    //current user naam tonen
     func setCurrentUserNaam(){
         let uid = Auth.auth().currentUser?.uid;
         Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: {
@@ -49,7 +50,7 @@ class ReservationsItemViewController: UIViewController {
         });
         
     }
-    
+    //naar beginscherm
     func transitionToBeginScreen(){
         let BeginScreen = storyboard?.instantiateViewController(identifier: "beginscreenVC") as? UINavigationController;
         BeginScreen?.modalPresentationStyle = .fullScreen;
@@ -59,6 +60,7 @@ class ReservationsItemViewController: UIViewController {
     
        }
 
+    //log out
     @IBAction func logOutButtonPressed(_ sender: Any) {
        
         do {

@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
+//struct currentuser
 struct CurrentUser : Codable{
     let uid : String;
     let name : String;
    
-    
+    //constructor
     init(uid : String , dict : [String : Any ]) {
         self.uid = dict["uid"] as? String ?? "";
         self.name = dict["naam"] as? String ?? "";

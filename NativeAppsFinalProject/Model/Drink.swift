@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-
+//struct drink
 struct Drink {
     var Image : UIImage;
     var Naam : String;
@@ -17,7 +17,7 @@ struct Drink {
     var Beschrijving : String;
     var Categorie : String;
     var AlcoholPerc : Double;
-    
+    //constructor
     init(image : UIImage, naam : String, prijs : Double, beschrijving : String, categorie : String, alcoholperc : Double) {
         self.Image = image;
         self.Naam = naam;

@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var singUpButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,7 +27,7 @@ class ViewController: UIViewController {
         }
     }
      
-    
+    //navigatiebalk onzichtbaar maken
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true);
     }

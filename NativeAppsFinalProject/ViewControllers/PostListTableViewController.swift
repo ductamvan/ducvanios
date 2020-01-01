@@ -15,10 +15,6 @@ import Firebase
 
 class PostListTableViewController: UITableViewController{
     
-  
-
-    
-    
     var posts : [Post] = [];
     
     
@@ -32,7 +28,9 @@ class PostListTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //afronden button
         self.postButton.layer.cornerRadius = 15;
+        //data linken met table
         self.PostTableView.delegate = self;
         self.PostTableView.dataSource = self;
         
@@ -117,15 +115,7 @@ class PostListTableViewController: UITableViewController{
         cell.PostContext.text = postie.Text;
         cell.PersonNameImage.text = postie.Persoon;
         
-        
-        
-        
-        
-        
-        
-        
         return cell;
-        
         
     }
     

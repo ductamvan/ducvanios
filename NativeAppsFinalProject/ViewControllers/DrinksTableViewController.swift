@@ -23,12 +23,13 @@ class DrinksTableViewController: UITableViewController, UISearchBarDelegate{
         self.navigationController?.isNavigationBarHidden = false;
     }
     
+    //drinks halen
     func createDrinks () -> [Drink] {
         let drinkies = Data.createDrinks();
         return drinkies;
         
     }
-    
+    //zoeken scope
     @available(iOS 3.0, *)
        func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
            switch selectedScope{
@@ -56,7 +57,7 @@ class DrinksTableViewController: UITableViewController, UISearchBarDelegate{
                       return;
                   }
        }
-       
+       //zoeken text
        @available(iOS 2.0, *)
        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
            CurrentDrinks = Drinks.filter({ drink -> Bool in

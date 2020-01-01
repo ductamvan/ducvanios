@@ -22,16 +22,7 @@ class PostViewCell: UITableViewCell {
     
     var postID : String = "";
     
-    @IBAction func likeButtonPressed(_ sender: Any) {
-        self.likeButton.isEnabled = false;
-        self.dislikeButton.isEnabled = true;
-    }
     
-    
-    @IBAction func dislikeButtonPressed(_ sender: Any) {
-        self.likeButton.isEnabled = true;
-        self.dislikeButton.isEnabled = false;
-    }
     
     
 }

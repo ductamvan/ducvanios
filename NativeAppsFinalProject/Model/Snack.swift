@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+//struct snack
 struct Snack {
     var Image : UIImage;
     var Naam : String;
@@ -16,6 +16,7 @@ struct Snack {
     var Beschrijving : String;
     var Categorie : String
     
+    //constructor
     init(image : UIImage, naam : String, prijs : Double, beschrijving : String, categorie : String) {
         self.Image = image;
         self.Naam = naam;

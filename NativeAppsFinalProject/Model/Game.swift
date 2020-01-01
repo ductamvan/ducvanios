@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-
+//struct game
 struct Game{
     var GameImage : UIImage;
     var Name : String ;
     var Price : Double ;
     var Description : String;
     var Categorie : String;
-    
+    //constructor
     init(image : UIImage,naam : String, price : Double, description : String, categorie : String) {
         self.GameImage = image;
         self.Name = naam;

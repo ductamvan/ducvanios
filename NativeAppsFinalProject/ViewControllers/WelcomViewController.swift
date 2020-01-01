@@ -22,15 +22,9 @@ class WelcomViewController: UIViewController {
         checkIfUserIsLoggedIn();
         self.continueButton.layer.cornerRadius = 15;
         
-               
-       
-        
-        
-
     }
     
-   
-    
+   //controleer naam zetten bij inlogscherm
     func checkIfUserIsLoggedIn(){
         if Auth.auth().currentUser?.uid == nil{
             do{

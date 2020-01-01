@@ -23,21 +23,22 @@ class DiscoveryItemViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    //bar onzichtbaar maken
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true;
     }
     
-
+    //naar snacks
     @IBAction func snacksButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "snackstable", sender: self);
     }
    
    
-    
+    //naar drinks
     @IBAction func drinksButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "drinkstable", sender: self); 
     }
-    
+    //naar games
     @IBAction func gamesButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "gamestable", sender: self)
     }
