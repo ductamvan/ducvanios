@@ -96,7 +96,7 @@ class SignUpViewController: UIViewController {
                 if error != nil{
                     //self.transitionToWelcomeScreen(); //testcode
                     print(error?.localizedDescription as Any);
-                    self.ErrorDetectionLabel.text = "Error Creating User";
+                    self.ErrorDetectionLabel.text =  "Email is not Correct";
                     self.ErrorDetectionLabel.alpha = 1;
                     //error geven in alert
                     let alert = UIAlertController(title: "Error", message: "Unexpected Error", preferredStyle: .alert);
